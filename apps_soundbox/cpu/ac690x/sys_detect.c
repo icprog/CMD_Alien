@@ -222,7 +222,7 @@ void battery_check(void *prt)
 	
     if(val < 32)
         low_off_cnt++;
-    if(val < 34)
+    if(val < 33)
         low_warn_cnt++;
 	if(val < 35)
 		low_pwr_cnt++;

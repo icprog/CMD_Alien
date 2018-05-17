@@ -43,6 +43,7 @@ static void idle_powerdown(void)
 {
 	printf("idle powerdown !!!\n");
 	eye_led_api(EFFECTCLOSEALLLED, 0, 0);	
+	ear_light_set_status(0);
 	pa_mute();
 
 	while(1)
