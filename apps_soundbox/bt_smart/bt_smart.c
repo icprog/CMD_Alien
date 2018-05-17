@@ -485,6 +485,7 @@ void bt_smart_msg_deal(void *priv, int *msg)
 			bt_smart_speech_stop();
 			eye_led_set_back_api(EFFECT_PAUSE);
 			eye_led_api(EFFECT_SEARCH_ING, 10, 0);	
+			pa_umute();
 			/* bt_smart_led_flick(150, BT_SMART_WAIT_ANSWER_TIMEOUT_N_SECOND); */
 			break;
 
