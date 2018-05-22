@@ -2426,7 +2426,7 @@
 1524639424 d:\work\jielibot\cmd_project\cmd_alien\include_lib\sydf\syd_file.h
 	"typedef.h"
 
-1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\bluetooth\btstack\bt_key_deal.c
+1526951895 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\bluetooth\btstack\bt_key_deal.c
 	"bt_key_deal.h"
 	"rtos/os_api.h"
 	"common/msg.h"
@@ -2474,7 +2474,7 @@
 1524639424 d:\work\jielibot\cmd_project\cmd_alien\include_lib\bluetooth\ble_api.h
 	"typedef.h"
 
-1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\bluetooth\btstack\bt_key_msg.c
+1526989576 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\bluetooth\btstack\bt_key_msg.c
 	"includes.h"
 	"sdk_cfg.h"
 	"bt_key_msg.h"
@@ -2528,7 +2528,7 @@
 1524639424 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\bluetooth\le_server_module.h
 	"bluetooth/ble_api.h"
 
-1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\bt_smart\bt_smart.c
+1526544189 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\bt_smart\bt_smart.c
 	"bt_smart.h"
 	"bt_smart_led.h"
 	"bluetooth/ble_api.h"
@@ -2936,7 +2936,7 @@
 	"iis.h"
 	"iis/wm8978.h"
 
-1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\cpu\ac690x\key_drv\key.c
+1526989695 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\cpu\ac690x\key_drv\key.c
 	"includes.h"
 	"key_drv/key.h"
 	"common/msg.h"
@@ -3023,7 +3023,7 @@
 1524639424 d:\work\jielibot\cmd_project\cmd_alien\include_lib\speex\speex_encode_api.h
 	"dec/if_decoder_ctrl.h"
 
-1526543627 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\cpu\ac690x\sys_detect.c
+1526544260 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\cpu\ac690x\sys_detect.c
 	"sdk_cfg.h"
 	"sys_detect.h"
 	"key_drv/key_drv_ad.h"
@@ -3508,4 +3508,429 @@
 	"fm_inside.h"
 	"fm\fm_radio.h"
 	"dac.h"
+
+1526543735 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\idle\idle.c
+	"common/app_cfg.h"
+	"rtos/os_api.h"
+	"rtos/os_cfg.h"
+	"common/error.h"
+	"common/msg.h"
+	"rtos/task_manage.h"
+	"sys_detect.h"
+	"dac/dac_api.h"
+	"play_sel/play_sel.h"
+	"key_drv/key.h"
+	"idle_key.h"
+	"idle.h"
+	"ai_toy.h"
+	"dac/dac.h"
+	"dac/dac_api.h"
+	"bt_smart.h"
+	"rtc_alarm.h"
+	"sys_detect.h"
+	"ui/led/led_eye.h"
+	"key_drv/key.h"
+	"key_drv/key_voice.h"
+	"timer_datetime.h"
+	"update.h"
+	"key_drv/key.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\idle\idle_key.c
+	"idle_key.h"
+	"common/msg.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\linein\dev_linein.c
+	"sdk_cfg.h"
+	"dev_linein.h"
+	"dev_manage/device_driver.h"
+	"common/msg.h"
+	"linein.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\linein\linein.c
+	"common/app_cfg.h"
+	"rtos/os_api.h"
+	"rtos/os_cfg.h"
+	"common/error.h"
+	"common/msg.h"
+	"rtos/task_manage.h"
+	"linein_key.h"
+	"linein.h"
+	"dac/dac_api.h"
+	"play_sel/play_sel.h"
+	"key_drv/key.h"
+	"ui/led/led.h"
+	"dac/dac_api.h"
+	"dev_linein.h"
+	"ui/ui_api.h"
+	"dac/ladc.h"
+	"linein_prompt.h"
+	"linein_ui.h"
+	"echo/echo_api.h"
+	"echo/echo_deal.h"
+	"record.h"
+	"encode/encode.h"
+	"key_drv/key_voice.h"
+	"dac/dac.h"
+	"dac/dac_api.h"
+	"rcsp/rcsp_interface.h"
+	"dac/eq.h"
+
+1524639424 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\linein\linein_key.h
+	"sdk_cfg.h"
+
+1524639424 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\linein\linein_prompt.h
+	"sdk_cfg.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\linein\linein_key.c
+	"linein_key.h"
+	"common/msg.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\linein\linein_prompt.c
+	"linein_prompt.h"
+	"play_sel/play_sel.h"
+	"dac/dac.h"
+	"dac/dac_api.h"
+	"linein.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\linein\linein_ui.c
+	"sdk_cfg.h"
+	"linein_ui.h"
+	"ui/ui_api.h"
+	"echo/echo_api.h"
+	"linein.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\main\main.c
+	"sdk_cfg.h"
+	"includes.h"
+	"main_key.h"
+	"rtos/os_api.h"
+	"common/app_cfg.h"
+	"dev_manage/dev_ctl.h"
+	"file_operate/file_op_err.h"
+	"rtos/task_manage.h"
+	"usb_device.h"
+	"key_drv/key.h"
+	"common/flash_cfg.h"
+	"vm/vm_api.h"
+	"ui/ui_api.h"
+	"dac/dac_api.h"
+	"linein.h"
+	"sys_detect.h"
+	"bluetooth/avctp_user.h"
+	"key_drv/key_drv_io.h"
+	"ui/led/led.h"
+	"key_drv/key_voice.h"
+	"dac/dac.h"
+	"rtc/rtc_api.h"
+	"update.h"
+	"clock.h"
+	"irq_api.h"
+	"rcsp/rcsp_interface.h"
+	"key_drv/key_drv_ad.h"
+	"bt_smart.h"
+	"ai_toy.h"
+	"ui/led/led_eye.h"
+	"iic.h"
+
+1524639424 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\main\main_key.h
+	"sdk_cfg.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\main\main_key.c
+	"main_key.h"
+	"common/msg.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\music\lyrics_api.c
+	"lyrics_api.h"
+	"uicon/lyrics.h"
+	"fat/tff.h"
+	"fat/fs_io.h"
+	"ui/lcd/lcd_drv_interface.h"
+	"uicon/ui.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\music\music.c
+	"sdk_cfg.h"
+	"common/app_cfg.h"
+	"rtos/os_api.h"
+	"rtos/os_cfg.h"
+	"common/error.h"
+	"stdarg.h"
+	"music.h"
+	"common/msg.h"
+	"rtos/task_manage.h"
+	"music_key.h"
+	"dec/music_api.h"
+	"vm/vm_api.h"
+	"play_sel/play_sel.h"
+	"dac/dac_api.h"
+	"dev_manage/drv_manage.h"
+	"ui/ui_api.h"
+	"ui/led/led.h"
+	"key_drv/key.h"
+	"music_prompt.h"
+	"music_info.h"
+	"music_ui.h"
+	"fat/tff.h"
+	"fat/fs_io.h"
+	"common/common.h"
+	"lyrics_api.h"
+	"dac/eq_api.h"
+	"dac/dac_api.h"
+	"dac/dac.h"
+	"dac/eq.h"
+	"music_ab_rpt.h"
+	"music_decrypt.h"
+	"clock_interface.h"
+	"clock.h"
+	"dec/decoder_phy.h"
+	"vm/vm.h"
+	"rcsp/rcsp_interface.h"
+	"speed_pitch_api.h"
+
+1524639424 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\music\music_ab_rpt.h
+	"typedef.h"
+	"dec/music_api.h"
+	"file_operate/fs_io_h.h"
+
+1524639424 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\music\music_decrypt.h
+	"typedef.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\music\music_ab_rpt.c
+	"music.h"
+	"music_ab_rpt.h"
+	"vm/vm_api.h"
+	"cpu/crc_api.h"
+	"sdk_cfg.h"
+	"fat/fs_io.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\music\music_decrypt.c
+	"music_decrypt.h"
+	"music.h"
+	"fat/fs_io.h"
+	"fat/tff.h"
+	"sdk_cfg.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\music\music_info.c
+	"sdk_cfg.h"
+	"common/app_cfg.h"
+	"music_info.h"
+	"common/msg.h"
+	"dac/dac_api.h"
+	"dev_manage/drv_manage.h"
+	"ui/ui_api.h"
+	"fat/tff.h"
+	"fat/fs_io.h"
+	"music_ui.h"
+	"file_operate/file_bs_deal.h"
+	"uart.h"
+	"dec/decoder_phy.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\music\music_prompt.c
+	"dec/decoder_phy.h"
+	"dec/music_api.h"
+	"music_prompt.h"
+	"play_sel/play_sel.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\music\music_ui.c
+	"sdk_cfg.h"
+	"music_ui.h"
+	"ui/ui_api.h"
+	"echo/echo_api.h"
+	"music.h"
+	"music_info.h"
+	"music_ab_rpt.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\record\rec_key.c
+	"rec_key.h"
+	"common/msg.h"
+	"sdk_cfg.h"
+
+1524639424 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\record\rec_key.h
+	"includes.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\record\rec_ui.c
+	"sdk_cfg.h"
+	"ui/ui_api.h"
+	"rec_ui.h"
+	"encode/encode.h"
+
+1524639424 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\record\rec_ui.h
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\record\record.c
+	"sdk_cfg.h"
+	"common/app_cfg.h"
+	"common/msg.h"
+	"common/includes.h"
+	"common/common.h"
+	"rtos/task_manage.h"
+	"play_sel/play_sel.h"
+	"sdmmc/sd_host_api.h"
+	"encode/dev_write_api.h"
+	"encode/mp2_encode_api.h"
+	"encode/encode.h"
+	"record.h"
+	"dac/dac_api.h"
+	"ui/ui_api.h"
+	"rec_key.h"
+	"sys_detect.h"
+	"rec_ui.h"
+	"key_drv/key.h"
+	"clock_api.h"
+	"clock.h"
+	"echo/echo_api.h"
+
+1524639424 d:\work\jielibot\cmd_project\cmd_alien\include_lib\encode\dev_write_api.h
+	"file_operate/file_op.h"
+	"encode.h"
+	"fat/tff.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\rtc\rtc.c
+	"dac/dac.h"
+	"rtc.h"
+	"ui/led/led.h"
+	"rtc_ui.h"
+	"rtc/rtc_api.h"
+	"sys_detect.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\rtc\rtc_alarm.c
+	"rtc_alarm.h"
+	"rtc/rtc_api.h"
+	"sdk_cfg.h"
+	"key_drv/key.h"
+	"sys_detect.h"
+	"vm/vm_api.h"
+	"rcsp/rcsp_interface.h"
+	"rcsp/rcsp_head.h"
+	"timer_datetime.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\rtc\rtc_key.c
+	"rtc.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\rtc\rtc_setting.c
+	"rtc.h"
+	"rtc_setting.h"
+	"sys_detect.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\rtc\rtc_ui.c
+	"rtc.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\rtc\timer_datetime.c
+	"timer_datetime.h"
+	"sdk_cfg.h"
+	"timer.h"
+	"key_drv/key.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\speed_pitch_api\speed_pitch_api.c
+	"speed_pitch_api.h"
+	"speed_pitch/ps_for69_api.h"
+	"rtos/os_api.h"
+	"common/printf.h"
+	"string.h"
+	"mem/malloc.h"
+	"uart.h"
+
+1524639424 d:\work\jielibot\cmd_project\cmd_alien\include_lib\speed_pitch\ps_for69_api.h
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\speex_api\smart_speex_api.c
+	"smart_speex_api.h"
+	"speex_encode.h"
+	"common/app_cfg.h"
+	"common/msg.h"
+	"rcsp/rcsp_interface.h"
+	"bluetooth/ble_api.h"
+	"bluetooth/avctp_user.h"
+	"ai_toy.h"
+	"sys_detect.h"
+	"dac/dac_api.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\speex_api\speex_decode.c
+	"speex_decode.h"
+	"sdk_cfg.h"
+	"common/app_cfg.h"
+	"common/msg.h"
+	"cpu/dac_param.h"
+	"dac/dac_api.h"
+	"dac/ladc_api.h"
+
+1524639424 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\speex_api\speex_decode.h
+	"typedef.h"
+	"speex/speex_encode_api.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\speex_api\speex_encode.c
+	"speex_encode.h"
+	"sdk_cfg.h"
+	"common/app_cfg.h"
+	"common/msg.h"
+	"cbuf/circular_buf.h"
+	"cpu/dac_param.h"
+	"dac/ladc_api.h"
+	"dac/dac_api.h"
+	"dac/ladc.h"
+	"timer.h"
+	"speex/DigitalAGC.h"
+	"vad/vad_api.h"
+
+1524639424 d:\work\jielibot\cmd_project\cmd_alien\include_lib\speex\digitalagc.h
+	"stdio.h"
+
+1524639424 d:\work\jielibot\cmd_project\cmd_alien\include_lib\vad\vad_api.h
+	"typedef.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\usb_device\dev_pc.c
+	"usb_device.h"
+	"sdmmc/sd_host_api.h"
+	"dev_pc.h"
+	"common/msg.h"
+	"dev_manage/device_driver.h"
+	"dac/dac.h"
+	"dac/dac_api.h"
+	"vm/vm_api.h"
+	"usb/usb_slave_api.h"
+	"sdk_cfg.h"
+	"dac/ladc.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\usb_device\pc_prompt.c
+	"pc_prompt.h"
+	"usb_device.h"
+
+1524639424 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\usb_device\pc_prompt.h
+	"sdk_cfg.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\usb_device\pc_ui.c
+	"sdk_cfg.h"
+	"pc_ui.h"
+	"ui/ui_api.h"
+
+1524639424 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\usb_device\pc_ui.h
+	"typedef.h"
+	"ui/ui_api.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\usb_device\usb_device.c
+	"common/app_cfg.h"
+	"rtos/os_api.h"
+	"rtos/os_cfg.h"
+	"common/msg.h"
+	"rtos/task_manage.h"
+	"usb_device.h"
+	"usb_key.h"
+	"dac/dac.h"
+	"dac/dac_api.h"
+	"play_sel/play_sel.h"
+	"dev_pc.h"
+	"dev_manage/dev_ctl.h"
+	"pc_prompt.h"
+	"sys_detect.h"
+	"pc_ui.h"
+	"key_drv/key.h"
+	"rcsp/rcsp_interface.h"
+
+1524639424 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\usb_device\usb_key.h
+	"sdk_cfg.h"
+
+1524639424 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\usb_device\usb_key.c
+	"usb_key.h"
+	"common/msg.h"
+
+1526978399 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\music\music_key.c
+	"music_key.h"
+	"common/msg.h"
 

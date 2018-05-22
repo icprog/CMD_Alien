@@ -26,7 +26,7 @@
                         /*06*/    NO_MSG,\
                         /*07*/    NO_MSG,\
                         /*08*/    MSG_AI_BT_DISCONNECT_CTRL,\
-                        /*09*/    MSG_CH_2_EN,
+                        /*09*/    NO_MSG,
 
 #define ADKEY_DECODE_HOLD		\
                         /*00*/    NO_MSG,\
