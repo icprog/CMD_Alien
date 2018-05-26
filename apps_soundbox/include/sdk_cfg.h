@@ -196,7 +196,7 @@
 ///<按键音
 #define KEY_TONE_EN     	    0
 ///<非0表示使用默认音量
-#define SYS_DEFAULT_VOL         MAX_SYS_VOL_L
+#define SYS_DEFAULT_VOL         20//MAX_SYS_VOL_L
 ///<人声消除
 #define VOCAL_REMOVER			0
 

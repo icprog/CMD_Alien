@@ -11,8 +11,8 @@
                         /*03*/    NO_MSG,\
                         /*04*/    NO_MSG,\
                         /*05*/    MSG_MUSIC_DIR_MODE,\
-                        /*06*/    MSG_MUSIC_PREV_FILE,\
-                        /*07*/    MSG_MUSIC_NEXT_FILE,\
+                        /*06*/    MSG_VOL_DOWN,\
+                        /*07*/    MSG_VOL_UP,\
                         /*08*/    MSG_MUSIC_PP,\
                         /*09*/    MSG_SPEECH_INPUT,
 
@@ -23,8 +23,8 @@
                         /*03*/    NO_MSG,\
                         /*04*/    NO_MSG,\
                         /*05*/    MSG_CHANGE_WORKMODE,\
-                        /*06*/    NO_MSG,\
-                        /*07*/    NO_MSG,\
+                        /*06*/    MSG_MUSIC_PREV_FILE,\
+                        /*07*/    MSG_MUSIC_NEXT_FILE,\
                         /*08*/    MSG_AI_BT_DISCONNECT_CTRL,\
                         /*09*/    NO_MSG,
 

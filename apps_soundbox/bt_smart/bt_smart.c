@@ -112,7 +112,8 @@ extern void ble_server_set_connection_interval(u16 in_min, u16 in_max, u16 timeo
 void bt_smart_ble_disconnect_deal(void)
 {
 	//清除一些状态
-	bt_smart_led_off();
+	//bt_smart_led_off();
+	bt_smart_led_flick(100, 0);
 	bt_smart_notice_plan = 0;
 	bt_smart_connect_dev_type = 0;
 }
@@ -144,6 +145,7 @@ tbool bt_smart_connect_status(void)
 	}
 	else
 	{
+		bt_smart_led_flick(100, 0);
 		return false;	
 	}
 }
@@ -482,7 +484,7 @@ void bt_smart_msg_deal(void *priv, int *msg)
 			bt_smart_speech_stop();
 			eye_led_set_back_api(EFFECT_PAUSE);
 			eye_led_api(EFFECT_SEARCH_ING, 10, 0);	
-			/* bt_smart_led_flick(150, BT_SMART_WAIT_ANSWER_TIMEOUT_N_SECOND); */
+			bt_smart_led_flick(150, BT_SMART_WAIT_ANSWER_TIMEOUT_N_SECOND); 
 			pa_umute();
 			break;
 
