@@ -3,6 +3,7 @@
 #include "rtos/os_api.h"
 #include "common/msg.h"
 #include "linein/linein.h"
+#include "alarm/alarm.h"
 #include "usb_device/usb_device.h"
 #include "fm/fm_radio.h"
 #include "music/music.h"
@@ -28,6 +29,7 @@ int check_return_false(void);
 extern TASK_REGISTER(btstack_task_info);
 extern TASK_REGISTER(bt_hid_task_info);
 extern TASK_REGISTER(AI_toy_music_task_info);
+#define TASK_NOT_IN_MAX_NUM					(2)
 ///任务切换
 const struct task_info *task_list[] AT(.task_info);
 const struct task_info *task_list[] =
@@ -66,6 +68,8 @@ const struct task_info *task_list[] =
 #if RCSP_LIGHT_HW    
     &light_task_info,
 #endif
+
+	&alarm_task_info,
 
     &idle_task_info,
 };
@@ -175,7 +179,7 @@ static u32 skip_task_without_dev(u32 *task_cnt)
     u32 max_cnt;
     u32 dev_cnt;
 
-    max_cnt = (sizeof(task_list) / sizeof(int)) - 1;
+    max_cnt = (sizeof(task_list) / sizeof(int)) - TASK_NOT_IN_MAX_NUM;
     dev_cnt = sizeof(task_connect_dev) / sizeof(int);
     for (i = 0; i < dev_cnt; i++)
     {
@@ -217,7 +221,7 @@ static RUN_TASK_STATUS run_task(u32 task_cnt, void *priv, TASK_SWITCH_MODE cur_m
 {
     u32 max_cnt;
 
-    max_cnt = (sizeof(task_list) / sizeof(int)) - 1;
+    max_cnt = (sizeof(task_list) / sizeof(int)) - TASK_NOT_IN_MAX_NUM;
     if (cur_mode == SWITCH_SPEC_TASK)
     {
         if (task_list[task_cnt] == curr_task) ///<指定运行的任务，与当前正在运行的任务一致

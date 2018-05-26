@@ -109,8 +109,18 @@
 #define BT_SMART_LICENCE_STRING_LEN			strlen(BT_SMART_LICENCE_STRING)
 #endif//BT_SMART_LICENCE_DEBUG_ENABLE
 
+#define BT_SMART_ALARM_EN					1
+#if (BT_SMART_ALARM_EN)
+#define USE_RTC_MODULE_ALARM_EN				0
+#endif
+
+
 #else
+
 #define BT_SMART_SPEECH_SOURCE	(NO_INPUT)
+
+#define BT_SMART_ALARM_EN					0
+
 #endif
 
 

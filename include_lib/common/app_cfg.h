@@ -12,6 +12,7 @@
 //保留2-10号优先级给客户开发
 /*模式任务*/
 
+#define TaskAlarmlePrio                 12  //Idle任务
 #define TaskIdlePrio                    12  //Idle任务
 #define TaskLineinPrio                  12  //LINE IN任务
 #define TaskLineinEqPrio                13  //LINE IN sofe eq任务

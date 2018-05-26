@@ -106,7 +106,7 @@
 
 
 #if EQ_EN
-#define RCSP_EQ_EN  1
+#define RCSP_EQ_EN  0
 #else
 #define RCSP_EQ_EN  0
 #endif

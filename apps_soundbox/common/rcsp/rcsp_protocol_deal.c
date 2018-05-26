@@ -20,6 +20,7 @@
 
 #if (SMART_SOUNDBOX_EN)
 #include "bt_smart.h"
+#include "bt_smart_alarm.h"
 #endif//SMART_SOUNDBOX_EN
 
 #if SUPPORT_APP_RCSP_EN 
@@ -948,6 +949,53 @@ u32 fw_report_user_data(void)
 #endif
 #endif//SMART_SOUNDBOX_EN
 
+
+static u32 fw_report_support_dev_config(u8 *OperationData, u8 *data, u16 len)
+{
+    u32 err = RCSP_OP_ERR_NONE;
+	u8 net_cfg = 0;
+	/* printf_buf(OperationData, 16); */
+	u32 configs = READ_BIG_U32(&OperationData[1]);
+	if(configs == 0)
+	{
+		printf("no need anser configs\n");
+		return err;		
+	}
+
+
+    u32 offset = 0;
+
+    u8 *data_pt;
+	u8 *data_boday; 
+
+    data_pt = (u8 *)rcsp_send_tmp_buf;//这里buf最大时128byte，要发送的数据不能超过此值
+	if(data_pt == NULL)
+	{
+		return RCSP_OP_ERR_MALLOC;	
+	}
+	data_boday = data_pt + rcsp_get_data_packet_body_offset();
+	
+	if((configs & BIT(0)) != 0)
+	{
+		if((JL_PORTB->IN & BIT(5)) == 0)
+		{
+			net_cfg = 1;
+		}
+		else
+		{
+			net_cfg = 0;
+		}
+		offset = offset + rcsp_fill_packet_frame_func(data_boday + offset, "NTSW", FRAME_TYPE_ANSI, (u8*)&net_cfg, sizeof(u8));
+	}
+
+	rcsp_fill_packet_head_func((void*)data_pt, 0xffff, offset,1);
+
+	err = rcsp_data_send_func((void*)data_pt, rcsp_get_data_packet_body_offset() + offset, rcsp_check_csw_ackflag_func(CSW_REQUEST_ACK_CBW,1));
+	rcsp_set_ack_csw_sw_func(0);
+	return err;
+}
+
+
 /*
  *********************************************************************************************************
  *
@@ -960,7 +1008,6 @@ u32 fw_report_user_data(void)
  * Note:
  *********************************************************************************************************
  */
-extern u32 rtc_alarm_rcsp_op_deal(u8 *OperationData, u8 *data, u16 len);
 static u32 app_public_cmd_parse(u8 *OperationData,u8 *data,u16 len)
 {
     u32 err = RCSP_OP_ERR_NONE,tmp32;
@@ -1055,9 +1102,16 @@ static u32 app_public_cmd_parse(u8 *OperationData,u8 *data,u16 len)
         }
         break;
 
+#if (BT_SMART_ALARM_EN)
 	case CBW_CMD_RTC_TIME_OP:
 		/* printf("CBW_CMD_RTC_TIME_OP\n"); */
-		rtc_alarm_rcsp_op_deal(OperationData, data, len);
+		bt_smart_alarm_rcsp_op_deal(OperationData, data, len);
+		break;
+#endif//BT_SMART_ALARM_EN
+
+	case CBW_CMD_GET_DEV_CFG:
+		printf("CBW_CMD_GET_DEV_CFG\n");
+		fw_report_support_dev_config(OperationData, data, len);
 		break;
 
     default:

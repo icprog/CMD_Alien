@@ -5,6 +5,15 @@
 #include "bt_smart_sco.h"
 #include "smart_speex_api.h"
 
+typedef enum __AI_MODE
+{
+	AI_MODE_SPEECH_INPUT = 0x0,
+	AI_MODE_WECHAT,
+	AI_MODE_CH_2_EN,
+	AI_MODE_EN_2_CH,
+		
+}AI_MODE;
+
 void bt_smart_enter_bt_task(void);
 void bt_smart_exit_bt_task(void);
 void bt_smart_ble_disconnect_deal(void);

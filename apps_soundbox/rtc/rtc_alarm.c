@@ -7,8 +7,31 @@
 #include "rcsp/rcsp_interface.h"
 #include "rcsp/rcsp_head.h"
 #include "timer_datetime.h"
-
+#if 0
 #define ALARM_NUM_MAX		(5)
+
+
+#define USE_RTC_MODULE_ALARM_EN		1
+
+#if(USE_RTC_MODULE_ALARM_EN)
+u8 rtc_module_alarm_status(void)
+{
+	return 0;	
+}
+#define set_alarm		rtc_module_write_alarm_datetime	
+#define set_datetime	rtc_module_write_rtc_datetime	
+#define read_alarm		rtc_module_read_alarm_datetime
+#define read_datetime	rtc_module_read_rtc_datetime
+#define alarm_switch	rtc_module_alarm_switch
+#define alarm_status	rtc_module_alarm_status
+#else
+#define set_alarm		timer_datetime_set_alarm	
+#define set_datetime	timer_datetime_set_datetime	
+#define read_alarm		timer_datetime_get_cur_alarm
+#define read_datetime	timer_datetime_get_cur_datetime
+#define alarm_switch	timer_datetime_alarm_switch
+#define alarm_status	timer_datetime_alarm_status
+#endif//USE_RTC_MODULE_ALARM_EN
 
 enum{
 	RTC_ALARM_OP_SYNC_TIME = 0x0,
@@ -120,6 +143,7 @@ u8 rtc_alarm_init(void)
 	rtc_alarm_reset();
 	set_keep_osci_flag(1);
 
+	printf("rtc alarm init ok\n");
 	return is_alarm_comming;
 }
 
@@ -392,7 +416,7 @@ static tbool rtc_alarm_del(u8 index)
 }
 
 
-u8 rtc_alarm_get_all_alarm_info(ALARM_ITEM item[ALARM_NUM_MAX])
+static u8 rtc_alarm_get_all_alarm_info(ALARM_ITEM item[ALARM_NUM_MAX])
 {
 	ALARM_ITEM item_tmp[ALARM_NUM_MAX];
 	u8 tmp[VM_ALARM_ITEM_LEN] = {0};
@@ -491,7 +515,7 @@ tbool rtc_alarm_get_nearest_alarm(RTC_TIME *alarm_time)
 	}
 
 	///计算出今天是星期几, 并且从改天开始
-	timer_datetime_get_cur(&time);
+	read_datetime(&time);
 	week_date = rtc_calculate_week_val(&time);
 	if(week_date == 0)
 	{
@@ -614,7 +638,7 @@ tbool rtc_alarm_get_nearest_alarm(RTC_TIME *alarm_time)
 	return true;
 }
 ///主要是清除单次的闹钟
-void rtc_alarm_clear_all_outdate_alarm(void)
+static void rtc_alarm_clear_all_outdate_alarm(void)
 {
 	RTC_TIME time;
 	RTC_TIME alarm;
@@ -624,8 +648,12 @@ void rtc_alarm_clear_all_outdate_alarm(void)
 	int ret;
 	/* rtc_module_read_rtc_datetime(&time); */
 
-	timer_datetime_get_cur(&time);
-	if(false == timer_datetime_get_cur_alarm(&alarm))
+	read_datetime(&time);
+	if(alarm_status() == 1)
+	{
+		read_alarm(&alarm);
+	}
+	else
 	{
 		printf("no alarm on !!!\n");
 		return;	
@@ -679,20 +707,21 @@ void rtc_alarm_set_next_alarm(u8 flag/*clear outdate alarm*/)
 	//找下一个最近的闹钟
 	if(rtc_alarm_get_nearest_alarm(&alarm) == true)
 	{
-		printf("set alarm ok\n");
+		printf("set alarm ok \n");
 
 	printf("alarm val ===========,%d-%d-%d, %d:%d:%d\n",alarm.dYear,alarm.bMonth,alarm.bDay,\
 			alarm.bHour,alarm.bMin,alarm.bSec);
-		timer_datetime_set_alarm(&alarm);
+		set_alarm(&alarm, 0);
+		alarm_switch(1);
 	}
 	else
 	{
 		printf("set next alarm err!!\n");		
-		timer_datetime_disable_alarm();
+		alarm_switch(0);
 	}
 }
 
-void rtc_alarm_sync_time(u8 *OperationData, u8 *data, u16 len)
+static void rtc_alarm_sync_time(u8 *OperationData, u8 *data, u16 len)
 {
 	RTC_TIME time;
 	OperationData += 2;
@@ -711,7 +740,7 @@ void rtc_alarm_sync_time(u8 *OperationData, u8 *data, u16 len)
 
 
 	/* rtc_module_write_rtc_datetime(&time); */
-	timer_datetime_sync(&time);
+	set_datetime(&time);
 
 }
 
@@ -723,7 +752,7 @@ tbool rtc_alarm_rcsp_alarm_add(u8 *OperationData, u8 *data, u16 len)
 	ALARM_ITEM item;
 	memset((u8*)&item, 0x0, sizeof(ALARM_ITEM));
 	printf("add data len = %d, data =  \n");
-	/* printf_buf(data, len); */
+	printf_buf(data, len);
 	data+=14;
 	item.index = data[0];
 	item.hour = data[1];
@@ -776,7 +805,101 @@ u32 rtc_alarm_rcsp_op_deal(u8 *OperationData, u8 *data, u16 len)
 	}
 	return err;
 }
+#endif
+
+static void  (*rtc_alarm_on_callback)(void) = NULL;
+
+static volatile u8 rtc_alarm_on_flag = 0;
+
+u8 rtc_alarm_status(void)
+{
+	return rtc_alarm_on_flag;	
+}
+
+static void rtc_alarm_isr(u8 flag)
+{
+
+	printf("rtc_alarm_isr 00\n");
+    if(INTERRUPT_TYPE_ALARM_COME == flag)
+    {
+		puts("--ALM-ON-ISR--\n");
+		rtc_alarm_on_flag = 1;
+		/* rtc_module_alarm_switch(0);  //响闹后关闭闹钟 */
+		if(rtc_alarm_on_callback)
+		{
+			rtc_alarm_on_callback();
+		}
+    }
+    if(INTERRUPT_TYPE_PCNT_OVF==flag)
+    {
+        puts("--TYPE_PCNT_OVF--\n");
+    }
+    if(INTERRUPT_TYPE_LDO5V_DET==flag)
+    {
+        puts("--LDO5V DET--\n");
+    }
+}
+
+static void rtc_alarm_reset(void)
+{
+	RTC_TIME time;
+	RTC_TIME alarm;
+	rtc_module_read_rtc_datetime(&time);
+    rtc_module_read_alarm_datetime(&alarm);
+    if (((time.dYear > 2100)
+            || (time.dYear < 2000))
+            || (time.bMonth >= 12)
+            || (time.bHour >= 24)
+            || (time.bMin >= 60)
+            || (time.bSec >= 60)
+            ||(rtc_module_get_power_up_flag()))
+    {
+        puts("\n--------RTC RESET--------\n");
+        time.dYear = 2016;
+        time.bMonth = 9;
+        time.bDay = 26;
+        time.bHour = 0;
+        time.bMin = 0;
+        time.bSec = 0;
+
+        //puts("\n--------ALM RESET--------\n");
+        memcpy(&alarm, &time,sizeof(RTC_TIME));
+
+        ///update date
+        rtc_module_write_rtc_datetime(&time);
+        rtc_module_write_alarm_datetime(&alarm , 0);
+    }
+
+    rtc_module_reset_irtc();
+}
+
+void rtc_alarm_set_alarm(RTC_TIME *alarm)
+{
+	rtc_alarm_on_flag = 0;	
+	rtc_module_write_alarm_datetime(alarm, 0);
+}
 
 
+tbool rtc_alarm_init(void (*p)(void))
+{
+	tbool is_alarm_comming;	
+    if(rtc_module_get_alm_come_flag())
+    {
+        //update mode ,maybe powerup alarming
+		printf("is alarm power up !!!!!\n");
+		is_alarm_comming = true;
+    }
+    else
+    {
+		is_alarm_comming = false;
+	}
+	
+	rtc_alarm_on_callback = p;
+	rtc_module_on(WAKE_UP_ENABLE, 0 , rtc_alarm_isr);
+	rtc_alarm_reset();
+	set_keep_osci_flag(1);
 
+	printf("rtc alarm init ok \n");
+	return is_alarm_comming;
+}
 

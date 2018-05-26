@@ -1,10 +1,11 @@
 #ifndef __RTC_ALARM_H__
 #define __RTC_ALARM_H__
 #include "typedef.h"
+#include "rtc/rtc_api.h"
 
-u8 rtc_alarm_init(void);
+tbool rtc_alarm_init(void (*p)(void));
+void rtc_alarm_set_alarm(RTC_TIME *alarm);
 void rtc_alarm_set_next_alarm(u8 flag);
-tbool rtc_alarm_set_nearest_alarm(void);
-void rtc_alarm_set_alarm_test(void);
+u8 rtc_alarm_status(void);
 
 #endif//  __RTC_ALARM_H__

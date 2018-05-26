@@ -14,6 +14,7 @@ INCLUDES = \
 -Iinclude/echo \
 -Iinclude/fm \
 -Iinclude/idle \
+-Iinclude/alarm \
 -Iinclude/linein \
 -Iinclude/main \
 -Iinclude/music \
@@ -101,6 +102,9 @@ fm/qn8035/QN8035.o \
 fm/rda5807/RDA5807.o \
 idle/idle.o \
 idle/idle_key.o \
+alarm/alarm.o \
+alarm/alarm_key.o \
+alarm/bt_smart_alarm.o \
 linein/dev_linein.o \
 linein/linein.o \
 linein/linein_key.o \

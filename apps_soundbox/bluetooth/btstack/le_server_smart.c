@@ -237,6 +237,7 @@ void app_server_le_msg_callback(uint16_t msg, uint8_t *buffer, uint16_t buffer_s
 			
 			if(ble_server_close_flag)
 			{
+				printf("dis adv......\n");
 				server_advertise_disable();
 				break;
 			}
@@ -591,8 +592,15 @@ tbool ble_check_connect_complete(void)
 
 void ble_server_close(void)
 {
-	ble_server_close_flag =  1;
-	ble_hci_disconnect(ble_conn_handle);
+	if(ble_conn_handle)
+	{
+		ble_server_close_flag =  1;
+		ble_hci_disconnect(ble_conn_handle);
+	}
+	else
+	{
+		server_advertise_disable();
+	}
 }
 
 void ble_server_set_connection_interval(u16 in_min, u16 in_max, u16 timeout)

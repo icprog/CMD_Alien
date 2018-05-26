@@ -8,6 +8,7 @@
 #include "ai_toy.h"
 #include "sys_detect.h"
 #include "dac/dac_api.h"
+#include "bt_smart.h"
 
 
 #define	SPEEX_ENCODE_TASK_NAME						"SPEEX_ENCODE_TASK" 
@@ -205,7 +206,14 @@ tbool bt_smart_speex_data_send(u8 speech_source, u8 op)
 	}
 
 	bt_smart_speex_data_send_cancel();//告知app取消上次的语音输入
-	bt_prompt_play_by_name(AI_TOY_NOTICE_SPEECH_INPUT, NULL);
+	if((op == AI_MODE_CH_2_EN) || (op == AI_MODE_EN_2_CH))
+	{
+		bt_prompt_play_by_name(AI_TOY_NOTICE_SPEECH_TRANC, NULL);
+	}
+	else
+	{
+		bt_prompt_play_by_name(AI_TOY_NOTICE_SPEECH_INPUT, NULL);
+	}
 	if(mutex_resource_apply("speex", 3, (void *)bt_smart_speex_encode_start, (void *)bt_smart_speex_encode_stop))
 	{
 		rcsp_smart_command_send(CBW_CMD_SPEEX_SEND_START, send_buf, 2);

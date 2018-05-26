@@ -225,6 +225,7 @@ typedef enum
 #define CBW_CMD_GET_LICENSE	            0x93
 #define CBW_CMD_EXCHANGE_VERSION		0x94
 #define CBW_CMD_START_FW_UPDATE 		0x95
+#define CBW_CMD_GET_DEV_CFG 			0x96
 
 #define CBW_CMD_SPEEX_SEND_START		0xA0
 #define CBW_CMD_SPEEX_SEND_STOP			0xA1

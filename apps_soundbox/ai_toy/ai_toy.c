@@ -50,7 +50,7 @@
 #endif//AI_TOY_DEBUG_EN
 
 u8	AI_toy_dir_mode = AI_TOY_DIR_MODE_UNACTIVE;
-
+extern u8 g_alarm_back;
 
 static const char *creat_dir_list[AI_TOY_DIR_MODE_MAX] = 
 {
@@ -862,58 +862,67 @@ void AI_toy_music_task(void *parg)
 	if((AI_toy_fop != NULL) && (file_operate_ctl(FOP_DEV_STATUS,AI_toy_fop,0,0) == 1))
 	{
 		AI_toy_printf("ai_finish_op %d\n", ai_finish_op);
-		if(ai_finish_op)
+
+		if(g_alarm_back)
 		{
-			switch(ai_finish_op)
-			{
-				case AI_FINISH_OP_PLAY:
-				case AI_FINISH_OP_REVERT:
-					err = AI_toy_music_play(mapi,DEV_SEL_SPEC,0,PLAY_BREAK_POINT,&(mapi->dop_api->file_num));
-					break;
-				case AI_FINISH_OP_PREV:
-					dac_mute(1, 0);
-					err = AI_toy_music_play(mapi,DEV_SEL_SPEC,0,PLAY_BREAK_POINT,&(mapi->dop_api->file_num));
-					music_stop_decoder(mapi);
-					dac_mute(0, 1);
-					err = AI_toy_music_play(mapi,DEV_SEL_CUR,0,PLAY_PREV_FILE,&(mapi->dop_api->file_num));
-					break;
-				case AI_FINISH_OP_NEXT:
-					dac_mute(1, 0);
-					err = AI_toy_music_play(mapi,DEV_SEL_SPEC,0,PLAY_BREAK_POINT,&(mapi->dop_api->file_num));
-					music_stop_decoder(mapi);
-					dac_mute(0, 1);
-					err = AI_toy_music_play(mapi,DEV_SEL_CUR,0,PLAY_NEXT_FILE,&(mapi->dop_api->file_num));
-					break;
-				case AI_FINISH_OP_PAUSE:
-					break;
-				default:
-					break;
-			}
-
-			ai_finish_op = 0;
-
+			g_alarm_back = 0;
+			err = AI_toy_music_play(mapi,DEV_SEL_SPEC,0,PLAY_BREAK_POINT,&(mapi->dop_api->file_num));
 		}
 		else
 		{
-			if(spec_file.flag)
+			if(ai_finish_op)
 			{
-				spec_file.flag = 0;
-				os_taskq_post(MUSIC_TASK_NAME, 3, MSG_MUSIC_SPC_FILE, spec_file.clust, spec_file.dir_index);
+				switch(ai_finish_op)
+				{
+					case AI_FINISH_OP_PLAY:
+					case AI_FINISH_OP_REVERT:
+						err = AI_toy_music_play(mapi,DEV_SEL_SPEC,0,PLAY_BREAK_POINT,&(mapi->dop_api->file_num));
+						break;
+					case AI_FINISH_OP_PREV:
+						dac_mute(1, 0);
+						err = AI_toy_music_play(mapi,DEV_SEL_SPEC,0,PLAY_BREAK_POINT,&(mapi->dop_api->file_num));
+						music_stop_decoder(mapi);
+						dac_mute(0, 1);
+						err = AI_toy_music_play(mapi,DEV_SEL_CUR,0,PLAY_PREV_FILE,&(mapi->dop_api->file_num));
+						break;
+					case AI_FINISH_OP_NEXT:
+						dac_mute(1, 0);
+						err = AI_toy_music_play(mapi,DEV_SEL_SPEC,0,PLAY_BREAK_POINT,&(mapi->dop_api->file_num));
+						music_stop_decoder(mapi);
+						dac_mute(0, 1);
+						err = AI_toy_music_play(mapi,DEV_SEL_CUR,0,PLAY_NEXT_FILE,&(mapi->dop_api->file_num));
+						break;
+					case AI_FINISH_OP_PAUSE:
+						break;
+					default:
+						break;
+				}
+
+				ai_finish_op = 0;
+
 			}
 			else
 			{
-				n_err = notice_player_play_by_path(MUSIC_TASK_NAME, 
-						AI_TOY_NOTICE_MODE_TF, 
-						AI_toy_tf_mode_notice_play_callback,
-						mapi);
-
-				if(n_err == NOTICE_PLAYER_MSG_BREAK_ERR || n_err == NOTICE_PLAYER_TASK_DEL_REQ_ERR)
+				if(spec_file.flag)
 				{
-
+					spec_file.flag = 0;
+					os_taskq_post(MUSIC_TASK_NAME, 3, MSG_MUSIC_SPC_FILE, spec_file.clust, spec_file.dir_index);
 				}
 				else
 				{
-					os_taskq_post(MUSIC_TASK_NAME, 1, MSG_MUSIC_DIR_MODE);
+					n_err = notice_player_play_by_path(MUSIC_TASK_NAME, 
+							AI_TOY_NOTICE_MODE_TF, 
+							AI_toy_tf_mode_notice_play_callback,
+							mapi);
+
+					if(n_err == NOTICE_PLAYER_MSG_BREAK_ERR || n_err == NOTICE_PLAYER_TASK_DEL_REQ_ERR)
+					{
+
+					}
+					else
+					{
+						os_taskq_post(MUSIC_TASK_NAME, 1, MSG_MUSIC_DIR_MODE);
+					}
 				}
 			}
 		}

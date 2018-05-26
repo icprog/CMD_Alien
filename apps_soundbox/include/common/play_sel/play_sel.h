@@ -54,6 +54,7 @@
 #define BPF_MUSIC_PAUSE_MP3     "/test.***"
 #define BPF_TEST_MP3       		"/test.***"
 #define BPF_CONNECT_ERR    		"/con_err.***"
+#define BPF_ALARM_MP3			"/alarm.***"
 
 typedef struct __PLAY_SEL_PARA //para
 {
@@ -99,5 +100,8 @@ typedef enum __NOTICE_PLAYER_ERR
 
 NOTICE_PLAYER_ERR notice_player_play_by_path(void *father_name, char *path, tbool (msg_deal)(void *priv, int msg[]), void *priv);
 void notice_player_stop(void);
+
+tbool play_sel_stop_without_end_msg(void);
+tbool tone_play_by_name_rpt(void *task_name, u32 delay, u32 rpt_time, u32 total_file, ...);
 
 #endif

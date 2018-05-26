@@ -13,14 +13,12 @@
 #include "dev_manage/drv_manage.h"
 #include "common/common.h"
 #include "timer.h"
-#include "timer_datetime.h"
 
 
 #define PA_EN  1
 u8 soft_poweroff_cnt = 0;
 u8 going_to_pwr_off = 0;
 u8 bd_work_mode;
-//static u8  pa_mute_flag = 0;
 void pa_mute(void)                                                                                                
 {
 #if PA_EN
@@ -28,7 +26,6 @@ void pa_mute(void)
 	PORTR_DIE(PORTR2,1);
 	PORTR_DIR(PORTR2,0);   
 	PORTR_OUT(PORTR2,0);   
-	//pa_mute_flag = 1;
 	/* printf("pa to-------->mute"); */
 	/* JL_PORTA->DIR &= ~BIT(4); */ 
 	/* JL_PORTA->OUT |= BIT(4); */  
@@ -39,14 +36,9 @@ void pa_umute(void)
 	PORTR_DIE(PORTR2,1);
 	PORTR_DIR(PORTR2,0);
 	PORTR_OUT(PORTR2,1);
-	//pa_mute_flag = 0;
 	/* printf("pa to-------->unmute"); */
 }
 
-//u8 pa_get_mute_status(void)
-//{
-//	return pa_mute_flag;	
-//}
 #if 0
 //输出高，进入防破音D类模式, 电压大于2.3V
 void pa_2_D(void)
@@ -726,7 +718,7 @@ static void microphone_det_init(void)
 
 static void pa_auto_mute_scan(void *p)
 {
-	static u8  pa_mute_flag = 1;
+	static u8 pa_mute_flag = 1;
 	if((is_auto_mute() != 0) || (is_dac_mute() != 0))		
 	{
 		if(pa_mute_flag == 0)
@@ -778,6 +770,5 @@ void sys_init(void)
 	microphone_det_init();
 	ear_light_init();
 	pa_auto_mute_init();
-	timer_datetime_init();
 
 }

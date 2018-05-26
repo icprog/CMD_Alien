@@ -23,6 +23,7 @@
 #define IDLE_TASK_NAME        "IdleTask"
 #define RCSP_TASK_NAME 		  "RCSP_Task"
 #define RDEF_LIGHT_TASK_NAME       "LightTask"
+#define ALARM_TASK_NAME       "AlarmTask"
 
 #endif
 

@@ -57,14 +57,6 @@ typedef enum __AI_STATUS
 	AI_STATUS_ACTIVE,
 }AI_STATUS;
 
-typedef enum __AI_MODE
-{
-	AI_MODE_SPEECH_INPUT = 0x0,
-	AI_MODE_WECHAT,
-	AI_MODE_CH_2_EN,
-	AI_MODE_EN_2_CH,
-		
-}AI_MODE;
 
 typedef struct __AI_CON
 {
@@ -86,6 +78,10 @@ static u8 bt_smart_notice_plan = 0;
 static u8 bt_smart_connect_dev_type = 0;
 /* static u8 bt_smart_speech_flag = 0; */
 
+#if (BT_SMART_ALARM_EN)
+static u8 back_play_bt_music_flag = 0;
+extern u8 g_alarm_back;
+#endif//BT_SMART_ALARM_EN
 
 extern u8 ignore_pause_eye_display;
 
@@ -98,6 +94,7 @@ extern void aux_dac_channel_off(void);
 extern void AI_toy_music_notice_play(MUSIC_OP_API *mapi, char *path);
 extern void AI_toy_active_ai_ok(void);
 extern void AI_toy_update_disconnect_ble(void);
+extern BT_MUSIC_STATE a2dp_get_status(void);
 
 extern void ble_server_set_connection_interval(u16 in_min, u16 in_max, u16 timeout);
 
@@ -485,8 +482,8 @@ void bt_smart_msg_deal(void *priv, int *msg)
 			bt_smart_speech_stop();
 			eye_led_set_back_api(EFFECT_PAUSE);
 			eye_led_api(EFFECT_SEARCH_ING, 10, 0);	
-			pa_umute();
 			/* bt_smart_led_flick(150, BT_SMART_WAIT_ANSWER_TIMEOUT_N_SECOND); */
+			pa_umute();
 			break;
 
 		case MSG_SPEEX_SEND_CONTINUE_END:
@@ -646,6 +643,7 @@ void bt_smart_msg_deal(void *priv, int *msg)
 			{
 				eye_led_api(EFFECT_PAUSE, 0 ,0);
 				bt_smart_speech_cancel();
+				pa_umute();
 				switch(msg[0])
 				{
 					case MSG_CHANGE_NET_RES_VER_PRIMARY://教材版本切换
@@ -727,6 +725,20 @@ void bt_smart_enter_bt_task(void)
 	else
 	{
 		/* bt_smart_led_blink(200, 2);	 */
+#if (BT_SMART_ALARM_EN)
+	if(g_alarm_back)
+	{
+		if(get_curr_channel_state() != 0)		
+		{
+			if(back_play_bt_music_flag)		
+			{
+				user_send_cmd_prepare(USER_CTRL_AVCTP_OPID_PLAY, 0, NULL);
+			}
+		}
+
+		back_play_bt_music_flag = 0;
+	}
+#endif//BT_SMART_ALARM_EN
 	}
 }
 
@@ -743,6 +755,15 @@ void bt_smart_exit_bt_task(void)
 	bt_smart_led_off();
 	ai_ctl.status = AI_STATUS_UNACTIVE;
 	ai_ctl.msg = NO_MSG;
+
+
+#if (BT_SMART_ALARM_EN)
+	if(BT_MUSIC_STATUS_STARTING == a2dp_get_status())
+	{
+		printf("music is playing ...\n");		
+		back_play_bt_music_flag = 1;
+	}
+#endif//BT_SMART_ALARM_EN
 }
 
 

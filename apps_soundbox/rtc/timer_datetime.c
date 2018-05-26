@@ -2,12 +2,15 @@
 #include "sdk_cfg.h"
 #include "timer.h"
 #include "key_drv/key.h"
+#include "rtos/task_manage.h"
 
+typedef void (*AL_FUN)(void);
 
 typedef struct __TIMER_DATETIME
 {
 	RTC_TIME date;
 	RTC_TIME alarm;
+	AL_FUN   alarm_cb;
 	volatile u8 sync_flag;
 	volatile u8 alarm_enable;
 	volatile u8 alarm_on;
@@ -15,6 +18,7 @@ typedef struct __TIMER_DATETIME
 
 TIMER_DATETIME cur_timer_datatime = 
 {
+	.alarm_cb = NULL,
 	.sync_flag = 0,
 	.alarm_enable = 0,
 	.alarm_on = 0,
@@ -88,7 +92,7 @@ static int timer_datetime_cmp(RTC_TIME time1, RTC_TIME time2)
 
 
 
-void timer_datetime_sync(RTC_TIME *time)
+void timer_datetime_set_datetime(RTC_TIME *time)
 {
 	OS_ENTER_CRITICAL();	
 	memcpy((u8 *)&(cur_timer_datatime.date), (u8*)time, sizeof(RTC_TIME));
@@ -100,14 +104,15 @@ void timer_datetime_set_alarm(RTC_TIME *alarm)
 {
 	OS_ENTER_CRITICAL();	
 	cur_timer_datatime.alarm_enable = 1;
+	cur_timer_datatime.alarm_on = 0;
 	memcpy((u8*)&cur_timer_datatime.alarm, (u8 *)alarm, sizeof(RTC_TIME));
 	OS_EXIT_CRITICAL();
 }
 
-void timer_datetime_disable_alarm(void)
+void timer_datetime_alarm_switch(u8 onoff)
 {
 	OS_ENTER_CRITICAL();	
-	cur_timer_datatime.alarm_enable = 0;
+	cur_timer_datatime.alarm_enable = onoff;
 	OS_EXIT_CRITICAL();
 }
 
@@ -149,15 +154,19 @@ static void timer_datetime_run(void *p)
 	if(cur_timer_datatime.alarm_enable == 1 && cur_timer_datatime.alarm_on == 0)	
 	{
 
-	/* printf("a:%4d-%2d-%2d, %2d:%2d:%2d\n",cur_timer_datatime.alarm.dYear,cur_timer_datatime.alarm.bMonth,cur_timer_datatime.alarm.bDay,\ */
-			/* cur_timer_datatime.alarm.bHour,cur_timer_datatime.alarm.bMin,cur_timer_datatime.alarm.bSec); */
+//	printf("a:%4d-%2d-%2d, %2d:%2d:%2d\n",cur_timer_datatime.alarm.dYear,cur_timer_datatime.alarm.bMonth,cur_timer_datatime.alarm.bDay,\
+//			cur_timer_datatime.alarm.bHour,cur_timer_datatime.alarm.bMin,cur_timer_datatime.alarm.bSec);
 
 		if(timer_datetime_cmp(cur_timer_datatime.date, cur_timer_datatime.alarm) >= 0)
 		{
 			cur_timer_datatime.alarm_enable = 0;
 			cur_timer_datatime.alarm_on = 1;
 			/* printf("alarm on !!!!!!!!!!!!!!!!!!\n"); */
-			os_taskq_post_msg(MAIN_TASK_NAME, 1, MSG_ALM_ON);
+
+			if(cur_timer_datatime.alarm_cb)
+			{
+				cur_timer_datatime.alarm_cb();	
+			}
 		}
 	}
 }
@@ -165,18 +174,20 @@ static void timer_datetime_run(void *p)
 
 
 
-void timer_datetime_init(void)
+tbool timer_datetime_init(void (*p)(void))
 {
 	memset((u8*)&cur_timer_datatime, 0x0, sizeof(TIMER_DATETIME));
+	cur_timer_datatime.alarm_cb = p;
 
 	s32 ret = timer_reg_isr_fun(timer0_hl,500,(void *)timer_datetime_run,NULL);
 	if(ret != TIMER_NO_ERR)
 	{
 		printf("timer datetime err = %x\n",ret);
 	}
+	return false;//非rtc 模块无法关机闹钟唤醒
 }
 
-tbool timer_datetime_get_cur(RTC_TIME *time)
+tbool timer_datetime_get_cur_datetime(RTC_TIME *time)
 {
 	if(time == NULL)
 		return false;
@@ -190,27 +201,29 @@ tbool timer_datetime_get_cur(RTC_TIME *time)
 	return false;
 }
 
-tbool timer_datetime_get_cur_alarm(RTC_TIME *alarm)
+void timer_datetime_get_cur_alarm(RTC_TIME *alarm)
 {
-	if(alarm == NULL)
-		return false;
-	if(cur_timer_datatime.alarm_on)
-	{
-		memcpy((u8*)alarm, (u8*)&(cur_timer_datatime.alarm), sizeof(RTC_TIME));
-		return true;
-	}
-
-	return false;
+//	if(alarm == NULL)
+//		return false;
+//	if(cur_timer_datatime.alarm_on)
+//	{
+//		memcpy((u8*)alarm, (u8*)&(cur_timer_datatime.alarm), sizeof(RTC_TIME));
+//		return true;
+//	}
+//
+//	return false;
+	memcpy((u8*)alarm, (u8*)&(cur_timer_datatime.alarm), sizeof(RTC_TIME));
 }
 
 
-u8 timer_datetime_check_alarm_status(void)
+u8 timer_datetime_alarm_status(void)
 {
 	return cur_timer_datatime.alarm_on;
 }
 
 
-void timer_datetime_set_alarm_off(void)
-{
-	cur_timer_datatime.alarm_on = 0;
-}
+/* void timer_datetime_set_alarm_off(void) */
+/* { */
+	/* cur_timer_datatime.alarm_on = 0; */
+/* } */
+

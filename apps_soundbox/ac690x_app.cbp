@@ -49,6 +49,7 @@
 					<Add directory="include/cpu/ac690x/ui/lcd" />
 					<Add directory="include/cpu/ac690x/ui/led" />
 					<Add directory="include/bt_smart" />
+					<Add directory="include/alarm" />
 					<Add directory="include/ai_toy" />
 				</Compiler>
 				<Linker>
@@ -240,6 +241,15 @@
 		<Unit filename="../include_lib/vm/vm.h" />
 		<Unit filename="../include_lib/vm/vm_api.h" />
 		<Unit filename="ai_toy/ai_toy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="alarm/alarm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="alarm/alarm_key.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="alarm/bt_smart_alarm.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="bluetooth/aec/aec_api.c">
@@ -478,6 +488,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="include/ai_toy/ai_toy.h" />
+		<Unit filename="include/alarm/alarm.h" />
+		<Unit filename="include/alarm/alarm_key.h" />
+		<Unit filename="include/alarm/bt_smart_alarm.h" />
 		<Unit filename="include/bluetooth/bt_key_deal.h" />
 		<Unit filename="include/bluetooth/bt_key_msg.h" />
 		<Unit filename="include/bluetooth/bt_ui.h" />

@@ -29,6 +29,7 @@
 
 #if (SMART_SOUNDBOX_EN)
 #include "bt_smart.h"
+#include "bt_smart_alarm.h"
 #endif//SMART_SOUNDBOX_EN
 #include "bluetooth/ble_api.h"
 
@@ -77,6 +78,7 @@ extern void set_esco_sr(u16 sr);
 extern char rec_file_name_last[];
 extern char rec_let_last;
 extern u8 ignore_pause_eye_display;
+extern u8 g_alarm_back;
 
 extern void debug_loop_err_clear(void);
 
@@ -582,13 +584,24 @@ static void btstack_status_change_deal(void *ptr, u8 status)
 			os_time_dly(1);
         switch(status)
         {
-
             case BT_STATUS_RESUME:
-				if(bt_smart_get_ai_status() == 0)
+#if (BT_SMART_ALARM_EN)
+				if(g_alarm_back)
 				{
-					user_ctrl_prompt_tone_play(BT_STATUS_RESUME,NULL);
+					g_alarm_back = 0;	
+					break;
 				}
-               led_fre_set(5,0);
+				else
+#endif
+				{
+					if(bt_smart_get_ai_status() != 0)
+					{
+						break;		
+					}
+
+					user_ctrl_prompt_tone_play(BT_STATUS_RESUME,NULL);
+					led_fre_set(5,0);
+				}
                break;
             case BT_STATUS_RESUME_BTSTACK:
                //协议栈要求回
@@ -1199,6 +1212,10 @@ static void btstack_key_handler(void *ptr,int *msg)
             //puts(" BT_H ");
 			debug_loop_err_clear();
 
+#if (BT_SMART_ALARM_EN)
+			bt_smart_alarm_debug_cur_alarm();
+#endif//BT_SMART_ALARM_EN
+
 			stereo_led_deal();
 			if(fast_test)
 			{
@@ -1501,6 +1518,11 @@ extern u8 microphone_enable;
 /*通过任务切换退出蓝牙时回调接口*/
 void exist_btstack_task()
 {
+
+#if (SMART_SOUNDBOX_EN)
+	bt_smart_exit_bt_task();
+#endif//(SMART_SOUNDBOX_EN)
+
     user_val->play_phone_number_flag = 0;
     user_val->is_phone_number_come = 0;
     if(user_val->phone_prompt_tone_playing_flag)
@@ -1539,9 +1561,6 @@ void exist_btstack_task()
 	exit_rec_api(&rec_bt_api);//exit rec when esco change
 
 
-#if (SMART_SOUNDBOX_EN)
-	bt_smart_exit_bt_task();
-#endif//(SMART_SOUNDBOX_EN)
 }
 extern void sys_time_auto_connection();
 void sys_time_auto_connection_caback(u8* addr)

@@ -14,7 +14,6 @@
 #include "dac/dac.h"
 #include "dac/dac_api.h"
 #include "bt_smart.h"
-#include "rtc_alarm.h"
 #include "sys_detect.h"
 #include "ui/led/led_eye.h"
 #include "key_drv/key.h"
@@ -23,7 +22,6 @@
 #include "update.h"
 #include "key_drv/key.h"
 
-#define ALARM_TIMEOUT_SECOND		(1*60L)//µ•Œª£∫∑÷÷”
 
 u8 first_power_on_flag = 1;
 
@@ -151,89 +149,6 @@ static void power_on_deal(void)
 
 
 
-static void alarm_on_deal(void)
-{
-	int msg[3];
-	NOTICE_PLAYER_ERR n_err;
-	u32 alarm_timeout = ALARM_TIMEOUT_SECOND * 2;
-
-	idle_puts("\n************************Idle TASK********************\n");
-
-	/* dac_channel_on(MUSIC_CHANNEL, FADE_ON); */
-	/* set_sys_vol(dac_ctl.sys_vol_l,dac_ctl.sys_vol_r,FADE_ON); */
-
-	eye_led_api(EFFECT_ALARM_ON, 0 ,0);
-	digit_auto_mute_set(0,-1,-1,-1);//close auto mute
-	dac_mute(0, 1);
-
-	while(1)
-	{
-		memset(msg,0x00,sizeof(msg));
-		os_taskq_pend(0, ARRAY_SIZE(msg), msg);
-		clear_wdt();
-		switch(msg[0])
-		{
-			case SYS_EVENT_DEL_TASK:
-				if (os_task_del_req_name(OS_TASK_SELF) == OS_TASK_DEL_REQ)
-				{
-					rtc_alarm_set_next_alarm(1);
-					timer_datetime_set_alarm_off();
-
-					digit_auto_mute_set(1,-1,-1,-1);
-
-					if(bt_smart_connect_status() == false)
-					{
-						eye_led_api(EFFECT_NO_CONNECT, 0 ,0);
-					}
-					else
-					{
-						eye_led_api(EFFECT_CONNECT_OK, 0 ,0);
-					}
-
-					os_task_del_res_name(OS_TASK_SELF);
-				}
-				break;
-
-			case SYS_EVENT_DEV_ONLINE:
-				printf("--idle SYS_EVENT_DEV_ONLINE\r");
-				os_taskq_post_msg(MAIN_TASK_NAME, 2, SYS_EVENT_TASK_RUN_REQ, MUSIC_TASK_NAME);
-				break;
-
-			case SYS_EVENT_DEV_OFFLINE:
-				printf("--idle SYS_EVENT_DEV_OFFLINE\r");
-				os_taskq_post_msg(MAIN_TASK_NAME, 2, SYS_EVENT_TASK_RUN_REQ, BTSTACK_TASK_NAME);
-				break;
-
-			case MSG_IDLE_CTL:
-				printf("key on back to last task\n");
-				os_taskq_post_msg(MAIN_TASK_NAME, 1, MSG_LAST_WORKMOD);
-				break;
-
-			case MSG_HALF_SECOND:
-				//idle_puts(" Idle_H ");
-				debug_loop_err_clear();
-
-				if(timer_datetime_check_alarm_status())
-				{
-					printf("alarm on !!!!!!\n");
-					send_key_voice(500);
-					if(alarm_timeout)
-					{
-						alarm_timeout--;
-					}
-					else
-					{
-						os_taskq_post_msg(MAIN_TASK_NAME, 1, MSG_LAST_WORKMOD);
-					}
-				}
-				break;
-
-			default:
-				break;
-		}
-	}
-}
-
 static void idle_task(void *p)
 {
 	NOTICE_PLAYER_ERR n_err;
@@ -288,6 +203,8 @@ static void idle_task(void *p)
 								(char *)AI_TOY_NOTICE_UPDATE_FAIL, 
 								update_notice_play_callback,
 								NULL);
+
+						ble_server_close();
 						while(1)
 						{
 							clear_wdt();
@@ -298,10 +215,6 @@ static void idle_task(void *p)
 					eye_led_api(EFFECT_UPDATE_ING, 0 ,0);
 					os_time_dly(100);		
 				}
-			}
-			else
-			{
-				alarm_on_deal();
 			}
 		}
 	}

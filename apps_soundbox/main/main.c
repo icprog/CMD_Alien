@@ -26,6 +26,7 @@
 #include "rcsp/rcsp_interface.h"
 #include "key_drv/key_drv_ad.h"
 #include "bt_smart.h"
+#include "bt_smart_alarm.h"
 #include "ai_toy.h"
 #include "ui/led/led_eye.h"
 
@@ -572,10 +573,19 @@ static void TaskMain(void *p)
 #endif
 
 					puts("*************Select Task***************\n");
-					task_switch(IDLE_TASK_NAME, 0, SWITCH_SPEC_TASK);//run idle task first
-                   //task_switch(BTSTACK_TASK_NAME, 0, SWITCH_SPEC_TASK);
-                    //task_switch(LINEIN_TASK_NAME, 0, SWITCH_SPEC_TASK);
-//                    task_switch(RTC_TASK_NAME, 0,SWITCH_SPEC_TASK);
+#if (BT_SMART_ALARM_EN)
+					if(bt_smart_alarm_init() == true)
+					{
+						task_switch(ALARM_TASK_NAME, 0, SWITCH_SPEC_TASK);//run idle task first
+					}
+					else
+#endif//BT_SMART_ALARM_EN
+					{
+						task_switch(IDLE_TASK_NAME, 0, SWITCH_SPEC_TASK);//run idle task first
+						//task_switch(BTSTACK_TASK_NAME, 0, SWITCH_SPEC_TASK);
+						//task_switch(LINEIN_TASK_NAME, 0, SWITCH_SPEC_TASK);
+						//                    task_switch(RTC_TASK_NAME, 0,SWITCH_SPEC_TASK);
+					}
 
                     os_taskq_post_event((char *)"CheckTask", 1, SYS_EVENT_LGDEV_ONLINE);
                     break;
@@ -642,12 +652,16 @@ static void TaskMain(void *p)
                 task_switch(0, 0, SWITCH_NEXT_TASK);
             break;
 
-/* #if RTC_ALM_EN */
         case MSG_ALM_ON:
             puts("\n\n\n\n------MSG_ALM_ON\n");
+#if (BT_SMART_ALARM_EN)
+			task_switch(ALARM_TASK_NAME, 0, SWITCH_SPEC_TASK);
+#else
+#if	(RTC_ALM_EN) 
 			task_switch(IDLE_TASK_NAME, 0, SWITCH_SPEC_TASK);
+#endif//RTC_ALM_EN
+#endif//BT_SMART_ALARM_EN
             break;
-/* #endif */
         case MSG_CHANGE_WORKMODE:
             puts("MSG_CHANGE_WORKMODE\n");
 			task_switch(0,0,SWITCH_NEXT_TASK);

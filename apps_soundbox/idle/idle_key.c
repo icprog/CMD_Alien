@@ -5,28 +5,28 @@
                             AD按键表
 *******************************************************************/
 #define ADKEY_IDLE_SHORT		\
-                        /*00*/    MSG_IDLE_CTL,\
-                        /*01*/    MSG_IDLE_CTL,\
-                        /*02*/    MSG_IDLE_CTL,\
-                        /*03*/    MSG_IDLE_CTL,\
-                        /*04*/    MSG_IDLE_CTL,\
-                        /*05*/    MSG_IDLE_CTL,\
-                        /*06*/    MSG_IDLE_CTL,\
-                        /*07*/    MSG_IDLE_CTL,\
-                        /*08*/    MSG_IDLE_CTL,\
-                        /*09*/    MSG_IDLE_CTL,
+                        /*00*/    NO_MSG,\
+                        /*01*/    NO_MSG,\
+                        /*02*/    NO_MSG,\
+                        /*03*/    NO_MSG,\
+                        /*04*/    NO_MSG,\
+                        /*05*/    NO_MSG,\
+                        /*06*/    NO_MSG,\
+                        /*07*/    NO_MSG,\
+                        /*08*/    NO_MSG,\
+                        /*09*/    NO_MSG,
 
 #define ADKEY_IDLE_LONG		\
-                        /*00*/    MSG_IDLE_CTL,\
-                        /*01*/    MSG_IDLE_CTL,\
-                        /*02*/    MSG_IDLE_CTL,\
-                        /*03*/    MSG_IDLE_CTL,\
-                        /*04*/    MSG_IDLE_CTL,\
-                        /*05*/    MSG_IDLE_CTL,\
-                        /*06*/    MSG_IDLE_CTL,\
-                        /*07*/    MSG_IDLE_CTL,\
-                        /*08*/    MSG_IDLE_CTL,\
-                        /*09*/    MSG_IDLE_CTL,
+                        /*00*/    NO_MSG,\
+                        /*01*/    NO_MSG,\
+                        /*02*/    NO_MSG,\
+                        /*03*/    NO_MSG,\
+                        /*04*/    NO_MSG,\
+                        /*05*/    NO_MSG,\
+                        /*06*/    NO_MSG,\
+                        /*07*/    NO_MSG,\
+                        /*08*/    NO_MSG,\
+                        /*09*/    NO_MSG,
 
 
 #define ADKEY_IDLE_HOLD		\
@@ -65,7 +65,7 @@ const u8 idle_ad_table[4][10] =
                             I/O按键表
 *******************************************************************/
 #define IOKEY_IDLE_SHORT		\
-                        /*00*/    MSG_IDLE_CNT,\
+                        /*00*/    NO_MSG,\
                         /*01*/    NO_MSG,\
                         /*02*/    NO_MSG,\
                         /*03*/    NO_MSG,\
@@ -77,7 +77,7 @@ const u8 idle_ad_table[4][10] =
                         /*09*/    NO_MSG,
 
 #define IOKEY_IDLE_LONG		\
-                        /*00*/    MSG_IDLE_CNT_LONG,\
+                        /*00*/    NO_MSG,\
                         /*01*/    NO_MSG,\
                         /*02*/    NO_MSG,\
                         /*03*/    NO_MSG,\
@@ -90,7 +90,7 @@ const u8 idle_ad_table[4][10] =
 
 
 #define IOKEY_IDLE_HOLD		\
-                        /*00*/    MSG_IDLE_CNT_HOLD,\
+                        /*00*/    NO_MSG,\
                         /*01*/    NO_MSG,\
                         /*02*/    NO_MSG,\
                         /*03*/    NO_MSG,\
@@ -102,7 +102,7 @@ const u8 idle_ad_table[4][10] =
                         /*09*/    NO_MSG,
 
 #define IOKEY_IDLE_LONG_UP	\
-                        /*00*/    MSG_IDLE_CNT_UP,\
+                        /*00*/    NO_MSG,\
                         /*01*/    NO_MSG,\
                         /*02*/    NO_MSG,\
                         /*03*/    NO_MSG,\

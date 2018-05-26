@@ -354,7 +354,18 @@ void  board_main(u32 cfg_addr, u32 addr, u32 res,u32 update_flag)
 	JL_PORTB->PD  &= ~BIT(13);
 	JL_PORTB->PU  &= ~BIT(13);
 
+
+	JL_PORTB->DIR |=  BIT(0);
+	JL_PORTB->DIE &= ~BIT(0);
+	JL_PORTB->PD  &= ~BIT(0);
+	JL_PORTB->PU  &= ~BIT(0);
 	
+	JL_PORTB->DIR |=  BIT(5);
+	JL_PORTB->DIE |= BIT(5);
+	JL_PORTB->PD  |=  BIT(5);
+	JL_PORTB->PU  &= ~BIT(5);
+
+ 
 	pa_mute();
 
 	puts(__DATE__);

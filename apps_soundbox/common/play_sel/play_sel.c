@@ -248,7 +248,7 @@ static void play_sel_task(void *p)
     /* set_sys_vol(dac_ctl.sys_vol_l, dac_ctl.sys_vol_r, FADE_ON); */
 	/* audio_sfr_dbg(0); */
 
-
+	pa_umute();
 	
 	set_sys_vol(NOTICE_PLAY_VOL_VAL, NOTICE_PLAY_VOL_VAL, FADE_ON);
 
@@ -557,6 +557,18 @@ tbool play_sel_stop(void)
     return true;
 }
 
+tbool play_sel_stop_without_end_msg(void)
+{
+    if(g_psel.alive)
+    {
+		dsel_printf("play sel ~\r");
+		g_psel.father_name = NULL;
+		psel_task_exit();
+        g_psel.alive = 0;
+    }
+
+    return true;
+}
 /*
 MSG_MUSIC_PP
 MSG_MUSIC_PLAY
@@ -702,6 +714,68 @@ tbool tone_play_by_name(void *task_name, u32 total_file, ...)
 
     return psel_enable;
 }
+
+
+tbool tone_play_by_name_rpt(void *task_name, u32 delay, u32 rpt_time, u32 total_file, ...)
+{
+    tbool psel_enable = 0;
+    _PLAY_SEL_PARA *psel_p = NULL;
+    tbool b_res;
+	u32 i;
+
+    va_list argptr;
+    va_start(argptr, total_file);
+
+    dsel_printf("\n func = %s\n", __FUNCTION__);
+
+    /*
+        if(play_sel_busy() != 0)
+        {
+            puts("warnning:tone is playing...\n");
+        }
+    */
+    psel_p = malloc_fun(psel_p, sizeof(_PLAY_SEL_PARA), 0);
+    if(NULL != psel_p)
+    {
+        psel_p->file_name = malloc_fun(psel_p->file_name, sizeof(psel_p->file_name[0]) * total_file, 0);
+        if(NULL != psel_p->file_name)
+        {
+            psel_enable = 1;
+            psel_p->max_file_number = total_file;
+            psel_p->delay = delay;
+            psel_p->rpt_time = rpt_time;
+
+
+			for(i = 0; i<total_file; i++)
+			{
+            	psel_p->file_name[i] =(void **)va_arg(argptr,int);
+				printf("file name = %s\n", psel_p->file_name[i]);
+			}
+        }
+        else
+        {
+            free_fun((void**)&psel_p);
+        }
+    }
+
+    b_res = play_sel(task_name, 'A', psel_p);
+    dsel_printf("\nafter play_sel\n");
+    if(psel_enable)
+    {
+        free_fun((void**)&psel_p->file_name);
+        free_fun((void**)&psel_p);
+    }
+
+    if(!b_res)
+    {
+        psel_enable = 0;
+    }
+    va_end(argptr);
+
+    return psel_enable;
+}
+
+
 
 void * tone_number_get_name(u32 number)
 {
