@@ -1591,7 +1591,11 @@ u8 rcsp_event_cbk_send_process(int send_allow_flag)
 		{
             rcsp_db_puts("--change mode\n");
             rcsp_com_report_flag &= (~RCSP_REPORT_WORKMODE_ACTION);
-   			Post_msg_to_rcsp_Task_do(MSG_RSCP_CHANGE_WORDMODE_ACTION, (u32)&support_taskname_group[rcsp_curr_task_id],(u32)rcsp_curr_task_id);
+   			//Post_msg_to_rcsp_Task_do(MSG_RSCP_CHANGE_WORDMODE_ACTION, (u32)&support_taskname_group[rcsp_curr_task_id],(u32)rcsp_curr_task_id);
+			if(rcsp_curr_task_id != -1)
+			{
+				Post_msg_to_rcsp_Task_do(MSG_RSCP_CHANGE_WORDMODE_ACTION, (u32)&support_taskname_group[rcsp_curr_task_id],(u32)rcsp_curr_task_id);
+			}
 			break;
 		}
 

@@ -4047,7 +4047,7 @@
 	"usb_key.h"
 	"common/msg.h"
 
-1527151825 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\ai_toy\ai_toy.c
+1527649136 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\ai_toy\ai_toy.c
 	"ai_toy.h"
 	"common/app_cfg.h"
 	"rtos/os_api.h"
@@ -4091,7 +4091,7 @@
 	"key_drv/key_voice.h"
 	"rtc/rtc_api.h"
 
-1527151822 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\ai_toy\ai_toy.h
+1527303690 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\ai_toy\ai_toy.h
 	"typedef.h"
 	"sdk_cfg.h"
 	"dec/music_api.h"
@@ -4109,11 +4109,11 @@
 
 1527151819 d:\work\jielibot\cmd_project\cmd_alien\include_lib\cpu\ac690x\hw_cpu.h
 
-1527151821 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\sdk_cfg.h
+1527649136 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\sdk_cfg.h
 	"includes.h"
 	"bluetooth/bluetooth_api.h"
 
-1527151822 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\common\includes.h
+1527303690 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\common\includes.h
 	"typedef.h"
 	"common/printf.h"
 	"uart.h"
@@ -4132,7 +4132,7 @@
 	"typedef.h"
 	"cpu.h"
 
-1527151820 d:\work\jielibot\cmd_project\cmd_alien\include_lib\common\msg.h
+1527303690 d:\work\jielibot\cmd_project\cmd_alien\include_lib\common\msg.h
 	"typedef.h"
 
 1527151820 d:\work\jielibot\cmd_project\cmd_alien\include_lib\rtos\os_api.h
@@ -4202,7 +4202,7 @@
 
 1527151819 d:\work\jielibot\cmd_project\cmd_alien\include_lib\dev_manage\ioctl.h
 
-1527151820 d:\work\jielibot\cmd_project\cmd_alien\include_lib\common\app_cfg.h
+1527303690 d:\work\jielibot\cmd_project\cmd_alien\include_lib\common\app_cfg.h
 
 1527151820 d:\work\jielibot\cmd_project\cmd_alien\include_lib\common\error.h
 
@@ -4250,7 +4250,7 @@
 1527151820 d:\work\jielibot\cmd_project\cmd_alien\include_lib\common\flash_cfg.h
 	"typedef.h"
 
-1527151822 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\common\play_sel\play_sel.h
+1527303690 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\common\play_sel\play_sel.h
 	"includes.h"
 	"sdk_cfg.h"
 	"bluetooth/avctp_user.h"
@@ -4349,13 +4349,13 @@
 	"typedef.h"
 	"clock_interface.h"
 
-1527151819 d:\work\jielibot\cmd_project\cmd_alien\include_lib\rcsp\rcsp_interface.h
+1527303690 d:\work\jielibot\cmd_project\cmd_alien\include_lib\rcsp\rcsp_interface.h
 	"typedef.h"
 	"common/msg.h"
 	"uart.h"
 	"file_operate/file_op.h"
 
-1527151822 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\common\rcsp\rcsp_head.h
+1527303690 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\common\rcsp\rcsp_head.h
 	"typedef.h"
 	"sdk_cfg.h"
 	"common/app_cfg.h"
@@ -4438,7 +4438,7 @@
 	"typedef.h"
 	"dec/decoder_phy.h"
 
-1527151822 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\bt_smart\bt_smart.h
+1527303690 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\bt_smart\bt_smart.h
 	"typedef.h"
 	"bt_smart_led.h"
 	"bt_smart_sco.h"
@@ -4464,7 +4464,7 @@
 1527151820 d:\work\jielibot\cmd_project\cmd_alien\include_lib\rtc\rtc_api.h
 	"typedef.h"
 
-1527151822 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\alarm\alarm.c
+1527303689 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\alarm\alarm.c
 	"common/app_cfg.h"
 	"rtos/os_api.h"
 	"rtos/os_cfg.h"
@@ -4480,22 +4480,22 @@
 	"bt_smart_alarm.h"
 	"ui/led/led_eye.h"
 
-1527151822 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\alarm\alarm_key.h
+1527303690 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\alarm\alarm_key.h
 	"sdk_cfg.h"
 
-1527151822 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\alarm\alarm.h
+1527303690 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\alarm\alarm.h
 	"includes.h"
 
-1527151822 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\alarm\bt_smart_alarm.h
+1527303690 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\alarm\bt_smart_alarm.h
 	"typedef.h"
 	"sdk_cfg.h"
 	"rtc/rtc_api.h"
 
-1527151822 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\alarm\alarm_key.c
+1527303689 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\alarm\alarm_key.c
 	"alarm_key.h"
 	"common/msg.h"
 
-1527151822 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\alarm\bt_smart_alarm.c
+1527303689 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\alarm\bt_smart_alarm.c
 	"bt_smart_alarm.h"
 	"sdk_cfg.h"
 	"key_drv/key.h"
@@ -4507,11 +4507,11 @@
 	"rtc/rtc_api.h"
 	"rtc/rtc_alarm.h"
 
-1527151822 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\rtc\timer_datetime.h
+1527303690 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\rtc\timer_datetime.h
 	"typedef.h"
 	"rtc/rtc_api.h"
 
-1527151822 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\rtc\rtc_alarm.h
+1527303690 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\rtc\rtc_alarm.h
 	"typedef.h"
 	"rtc/rtc_api.h"
 
@@ -4566,7 +4566,7 @@
 1527151819 d:\work\jielibot\cmd_project\cmd_alien\include_lib\sydf\syd_file.h
 	"typedef.h"
 
-1527151821 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\bluetooth\btstack\bt_key_deal.c
+1527649136 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\bluetooth\btstack\bt_key_deal.c
 	"bt_key_deal.h"
 	"rtos/os_api.h"
 	"common/msg.h"
@@ -4615,7 +4615,7 @@
 1527151819 d:\work\jielibot\cmd_project\cmd_alien\include_lib\bluetooth\ble_api.h
 	"typedef.h"
 
-1527163511 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\bluetooth\btstack\bt_key_msg.c
+1527649136 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\bluetooth\btstack\bt_key_msg.c
 	"includes.h"
 	"sdk_cfg.h"
 	"bt_key_msg.h"
@@ -4649,7 +4649,7 @@
 	"rtos/os_api.h"
 	"rtos/task_manage.h"
 
-1527151821 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\bluetooth\btstack\le_server_smart.c
+1527303689 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\bluetooth\btstack\le_server_smart.c
 	"typedef.h"
 	"sdk_cfg.h"
 	"common/msg.h"
@@ -4669,7 +4669,7 @@
 1527151821 d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\include\bluetooth\le_server_module.h
 	"bluetooth/ble_api.h"
 
-1527151825 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\bt_smart\bt_smart.c
+1527649136 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\bt_smart\bt_smart.c
 	"bt_smart.h"
 	"bt_smart_led.h"
 	"bluetooth/ble_api.h"
@@ -4802,7 +4802,7 @@
 	"mem/malloc.h"
 	"stdarg.h"
 
-1527151825 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\common\os_api\task_manage.c
+1527303689 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\common\os_api\task_manage.c
 	"sdk_cfg.h"
 	"rtos/task_manage.h"
 	"rtos/os_api.h"
@@ -4832,7 +4832,7 @@
 1527151820 d:\work\jielibot\cmd_project\cmd_alien\include_lib\encode\record.h
 	"typedef.h"
 
-1527151825 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\common\play_sel\play_sel.c
+1527303689 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\common\play_sel\play_sel.c
 	"play_sel/play_sel.h"
 	"common/app_cfg.h"
 	"rtos/os_api.h"
@@ -4894,7 +4894,7 @@
 	"music/music_info.h"
 	"dac/eq_api.h"
 
-1527151825 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\common\rcsp\rcsp_event_deal.c
+1527650045 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\common\rcsp\rcsp_event_deal.c
 	"rcsp/rcsp_head.h"
 	"rcsp/rcsp_interface.h"
 	"dac/dac_api.h"
@@ -4905,7 +4905,7 @@
 	"clock_api.h"
 	"clock.h"
 
-1527151825 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\common\rcsp\rcsp_protocol_deal.c
+1527650167 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\common\rcsp\rcsp_protocol_deal.c
 	"rcsp/rcsp_interface.h"
 	"rcsp/rcsp_head.h"
 	"bluetooth/avctp_user.h"
@@ -4935,7 +4935,7 @@
 	"sdk_cfg.h"
 	"peripherals/winbond_flash.h"
 
-1527151820 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\cpu\ac690x\board\board.c
+1527303689 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\cpu\ac690x\board\board.c
 	"sdk_cfg.h"
 	"timer.h"
 	"key_drv/key.h"
@@ -5076,7 +5076,7 @@
 	"iis.h"
 	"iis/wm8978.h"
 
-1527164891 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\cpu\ac690x\key_drv\key.c
+1527649136 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\cpu\ac690x\key_drv\key.c
 	"includes.h"
 	"key_drv/key.h"
 	"common/msg.h"
@@ -5163,7 +5163,7 @@
 1527151819 d:\work\jielibot\cmd_project\cmd_alien\include_lib\speex\speex_encode_api.h
 	"dec/if_decoder_ctrl.h"
 
-1527163646 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\cpu\ac690x\sys_detect.c
+1527303689 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\cpu\ac690x\sys_detect.c
 	"sdk_cfg.h"
 	"sys_detect.h"
 	"key_drv/key_drv_ad.h"
@@ -5644,7 +5644,7 @@
 	"fm\fm_radio.h"
 	"dac.h"
 
-1527163566 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\idle\idle.c
+1527649136 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\idle\idle.c
 	"common/app_cfg.h"
 	"rtos/os_api.h"
 	"rtos/os_cfg.h"
@@ -5669,7 +5669,7 @@
 	"update.h"
 	"key_drv/key.h"
 
-1527151820 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\idle\idle_key.c
+1527303690 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\idle\idle_key.c
 	"idle_key.h"
 	"common/msg.h"
 
@@ -5733,7 +5733,7 @@
 	"echo/echo_api.h"
 	"linein.h"
 
-1527151825 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\main\main.c
+1527303690 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\main\main.c
 	"sdk_cfg.h"
 	"includes.h"
 	"main_key.h"
@@ -5859,7 +5859,7 @@
 	"uart.h"
 	"dec/decoder_phy.h"
 
-1527163600 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\music\music_key.c
+1527649136 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\music\music_key.c
 	"music_key.h"
 	"common/msg.h"
 
@@ -5930,7 +5930,7 @@
 	"rtc/rtc_api.h"
 	"sys_detect.h"
 
-1527151825 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\rtc\rtc_alarm.c
+1527303690 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\rtc\rtc_alarm.c
 	"rtc_alarm.h"
 	"rtc/rtc_api.h"
 	"sdk_cfg.h"
@@ -5952,7 +5952,7 @@
 1527151825 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\rtc\rtc_ui.c
 	"rtc.h"
 
-1527151825 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\rtc\timer_datetime.c
+1527303690 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\rtc\timer_datetime.c
 	"timer_datetime.h"
 	"sdk_cfg.h"
 	"timer.h"
@@ -5970,7 +5970,7 @@
 
 1527151819 d:\work\jielibot\cmd_project\cmd_alien\include_lib\speed_pitch\ps_for69_api.h
 
-1527151820 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\speex_api\smart_speex_api.c
+1527653034 source:d:\work\jielibot\cmd_project\cmd_alien\apps_soundbox\speex_api\smart_speex_api.c
 	"smart_speex_api.h"
 	"speex_encode.h"
 	"common/app_cfg.h"
