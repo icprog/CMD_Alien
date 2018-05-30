@@ -1018,8 +1018,14 @@ static u32 app_public_cmd_parse(u8 *OperationData,u8 *data,u16 len)
 
     P_FUNCTION
 			
-	apptask_msg_cbk_deal = support_app_msg_callback_group[rcsp_curr_task_id];     
+	//apptask_msg_cbk_deal = support_app_msg_callback_group[rcsp_curr_task_id];     
 
+	
+	if(rcsp_curr_task_id != -1)
+	{
+		apptask_msg_cbk_deal = support_app_msg_callback_group[rcsp_curr_task_id];	  
+	}
+	
 	printf("Op = %x\n", OperationData[0]);
 
     switch (OperationData[0])
@@ -1126,7 +1132,12 @@ static u32 app_public_cmd_parse(u8 *OperationData,u8 *data,u16 len)
 
     if(msg != RCSP_CBK_NO_MSG)
     {
-        err = apptask_msg_cbk_deal(msg,&OperationData[buf_offset+1],back_len);
+        //err = apptask_msg_cbk_deal(msg,&OperationData[buf_offset+1],back_len);
+        
+		if(rcsp_curr_task_id != -1)
+		{
+			err = apptask_msg_cbk_deal(msg,&OperationData[buf_offset+1],back_len);
+		}
     }
 
 /*

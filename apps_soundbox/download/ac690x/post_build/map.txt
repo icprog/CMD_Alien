@@ -655,31 +655,31 @@ C:\JL\pi32\lib\libc.a(lib_a-strtok_r.o)
 C:\JL\pi32\lib\libc.a(lib_a-impure.o)
                               C:\JL\pi32\lib\libc.a(lib_a-strtok.o) (_impure_ptr)
 C:\JL\pi32\lib\libcompiler-rt.a(ashldi3.o)
-                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o (__ashldi3)
+                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o (__ashldi3)
 C:\JL\pi32\lib\libcompiler-rt.a(divdi3.o)
-                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o (__divdi3)
+                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o (__divdi3)
 C:\JL\pi32\lib\libcompiler-rt.a(extendsfdf2.o)
-                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o (__extendsfdf2)
+                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o (__extendsfdf2)
 C:\JL\pi32\lib\libcompiler-rt.a(fixsfsi.o)
-                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o (__fixsfsi)
+                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o (__fixsfsi)
 C:\JL\pi32\lib\libcompiler-rt.a(floatunsisf.o)
-                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o (__floatunsisf)
+                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o (__floatunsisf)
 C:\JL\pi32\lib\libcompiler-rt.a(lshrdi3.o)
-                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o (__lshrdi3)
+                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o (__lshrdi3)
 C:\JL\pi32\lib\libcompiler-rt.a(muldf3.o)
-                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o (__muldf3)
+                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o (__muldf3)
 C:\JL\pi32\lib\libcompiler-rt.a(muldi3.o)
                               C:\JL\pi32\lib\libcompiler-rt.a(muldf3.o) (__muldi3)
 C:\JL\pi32\lib\libcompiler-rt.a(mulsf3.o)
-                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o (__mulsf3)
+                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o (__mulsf3)
 C:\JL\pi32\lib\libcompiler-rt.a(truncdfsf2.o)
-                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o (__truncdfsf2)
+                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o (__truncdfsf2)
 C:\JL\pi32\lib\libcompiler-rt.a(udivdi3.o)
-                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o (__udivdi3)
+                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o (__udivdi3)
 C:\JL\pi32\lib\libcompiler-rt.a(udivmoddi4.o)
                               C:\JL\pi32\lib\libcompiler-rt.a(divdi3.o) (__udivmoddi4)
 C:\JL\pi32\lib\libcompiler-rt.a(umoddi3.o)
-                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o (__umoddi3)
+                              C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o (__umoddi3)
 
 Allocating common symbols
 Common symbol       size              file
@@ -696,10 +696,10 @@ rcsp_music_getting_info
 BT_PCM_CON_save     0x0               RF_bredr.o (symbol from plugin)
 light_scene_target  0x0               obj\Debug\apps_soundbox\common\rcsp\light_control\light_main.o (symbol from plugin)
 OSRdyTbl            0x0               os_core.o (symbol from plugin)
-OSTCBHighRdy        0x4               C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+OSTCBHighRdy        0x4               C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
 bt_trim_cfg         0x0               analog.o (symbol from plugin)
 server_send_sem     0x0               gatt_server_func.o (symbol from plugin)
-fcc_uart_buf        0xd               C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+fcc_uart_buf        0xd               C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
 adc_digit_energy_value
                     0x0               obj\Debug\apps_soundbox\cpu\ac690x\ladc\ladc.o (symbol from plugin)
 timer_info          0x0               timer_driver.o (symbol from plugin)
@@ -741,7 +741,7 @@ gap_le_cmd          0x0               gatt_main.o (symbol from plugin)
 t0_cnt1             0x0               obj\Debug\apps_soundbox\cpu\ac690x\timer\timer.o (symbol from plugin)
 uart0_handle        0x0               obj\Debug\apps_soundbox\cpu\ac690x\uart\uart.o (symbol from plugin)
 OSRunning           0x0               os_core.o (symbol from plugin)
-OSTCBCur            0x4               C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+OSTCBCur            0x4               C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
 cur_cfg             0x0               timer_driver.o (symbol from plugin)
 menu_keytask_name   0x0               obj\Debug\apps_soundbox\cpu\ac690x\key_drv\key.o (symbol from plugin)
 music_cur_filetotal
@@ -1383,7 +1383,7 @@ zebra_ram        0x000f5600         0x00002f00
 Linker script and memory map
 
 LOAD obj\Debug\apps_soundbox\ai_toy\ai_toy.o
-LOAD C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+LOAD C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
 LOAD obj\Debug\apps_soundbox\alarm\alarm.o
 LOAD obj\Debug\apps_soundbox\alarm\alarm_key.o
 LOAD obj\Debug\apps_soundbox\alarm\bt_smart_alarm.o
@@ -1503,7 +1503,7 @@ LOAD obj\Debug\apps_soundbox\usb_device\usb_key.o
 
 .data           0x00300000     0x1562
  *(.data*)
- .data          0x00300000      0x4d0 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+ .data          0x00300000      0x4d0 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
  .data          0x003004d0        0x4 C:\JL\pi32\lib\libc.a(lib_a-ctype_.o)
                 0x003004d0                __ctype_ptr__
  .data          0x003004d4        0x0 C:\JL\pi32\lib\libc.a(lib_a-memcmp.o)
@@ -1535,18 +1535,18 @@ LOAD obj\Debug\apps_soundbox\usb_device\usb_key.o
  .data          0x003008fc        0x0 C:\JL\pi32\lib\libcompiler-rt.a(umoddi3.o)
  *(.non_volatile_ram)
  .non_volatile_ram
-                0x003008fc      0xb3c C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+                0x003008fc      0xb3c C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
  *(.fm_code)
  *(.common)
- .common        0x00301438      0x12a C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+ .common        0x00301438      0x12a C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
                 0x003014f8                set_sys_freq
 
 .db_memory      0x00301564      0x180
- .db_memory     0x00301564      0x180 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+ .db_memory     0x00301564      0x180 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
 
 .bss            0x003016f0     0x624c
  *(.bss)
- .bss           0x003016f0     0x2b60 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+ .bss           0x003016f0     0x2b60 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
                 0x00301f90                vm_obj
  .bss           0x00304250        0x4 ../include_lib/cpu_lib_ac690x.a(irq_driver_asm.o)
  .bss           0x00304254        0x0 C:\JL\pi32\lib\libc.a(lib_a-ctype_.o)
@@ -1577,19 +1577,19 @@ LOAD obj\Debug\apps_soundbox\usb_device\usb_key.o
  .bss           0x00304254        0x0 C:\JL\pi32\lib\libcompiler-rt.a(udivmoddi4.o)
  .bss           0x00304254        0x0 C:\JL\pi32\lib\libcompiler-rt.a(umoddi3.o)
  *(.dac_buf_sec)
- .dac_buf_sec   0x00304254      0x280 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+ .dac_buf_sec   0x00304254      0x280 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
                 0x00304354                read_buf
                 0x003044d4                bredr_base_addr = .
  *(.bt_classic_base)
  .bt_classic_base
-                0x003044d4      0x450 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+                0x003044d4      0x450 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
  *(.bt_sco_codec_data)
  .bt_sco_codec_data
-                0x00304924      0x400 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+                0x00304924      0x400 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
  *(.bt_classic_data)
  .bt_classic_data
-                0x00304d24     0x2c00 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
- COMMON         0x00307924       0x18 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+                0x00304d24     0x2c00 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+ COMMON         0x00307924       0x18 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
                 0x00307924                OSTCBHighRdy
                 0x00307928                fcc_uart_buf
                 0x00307938                OSTCBCur
@@ -1604,7 +1604,7 @@ LOAD obj\Debug\apps_soundbox\usb_device\usb_key.o
                 0x00340080                bredr_base_updata_ram1 = .
                 0x00340080                _bredr_nv_mem_begin = .
  *(.ram1_data)
- .ram1_data     0x00340080     0x2b84 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+ .ram1_data     0x00340080     0x2b84 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
                 0x0034015c                bc51_name
                 0x0034017c                bt_local_addr
                 0x00340184                local
@@ -1621,11 +1621,11 @@ LOAD obj\Debug\apps_soundbox\usb_device\usb_key.o
                 0x00342c04                _bredr_nv_mem_end = .
                 0x00342c04                _ble_nv_mem_begin = .
  *(.bt_nv_data)
- .bt_nv_data    0x00342c04      0x12c C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+ .bt_nv_data    0x00342c04      0x12c C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
                 0x00342d30                _ble_nv_mem_end = .
  *(.eq_buf_sec)
  *(.sd_buf)
- .sd_buf        0x00342d30       0x38 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+ .sd_buf        0x00342d30       0x38 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
                 0x00342d30                g_sd0_var_p
                 0x00342d34                g_sd1_var_p
                 0x00342d38                sd0_cmd_buf
@@ -1642,28 +1642,28 @@ LOAD obj\Debug\apps_soundbox\usb_device\usb_key.o
  *icache_hw.o(.text)
                 0x00342ed0                _system_cfg_begin = .
  *(.system_cfg)
- .system_cfg    0x00342ed0        0x1 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+ .system_cfg    0x00342ed0        0x1 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
                 0x00342ed1                _system_cfg_end = .
  *(.powerdown_text)
  *fill*         0x00342ed1        0x3 
  .powerdown_text
-                0x00342ed4      0x56c C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+                0x00342ed4      0x56c C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
                 0x00343180                __enter_powerdown_mode
  *(.zebra_data)
                 0x00003800                . = 0x3800
  *fill*         0x00343440      0x440 
  *(.ble_bb_ram)
- .ble_bb_ram    0x00343880      0xdf0 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+ .ble_bb_ram    0x00343880      0xdf0 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
  *(.ble_hci_param)
  .ble_hci_param
-                0x00344670       0x20 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+                0x00344670       0x20 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
 
 .bss_ram1       0x00344690     0x157c
  *(.stack)
  .stack         0x00344690      0x400 ../include_lib/cpu_lib_ac690x.a(startup.o)
                 0x00344a90                _stack
  *(.ram1_bss)
- .ram1_bss      0x00344a90     0x117c C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+ .ram1_bss      0x00344a90     0x117c C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
                 0x00344a90                sbc_detect_work_buf
                 0x003455b0                rf
                 0x000f5600                . = ORIGIN (zebra_ram)
@@ -1672,12 +1672,12 @@ LOAD obj\Debug\apps_soundbox\usb_device\usb_key.o
  *(.zb_core_ram)
                 0x01000000                . = ORIGIN (flash)
 
-.text           0x01000000    0x6b686
+.text           0x01000000    0x6b6a6
  *startup.o(.text)
  .text          0x01000000      0x104 ../include_lib/cpu_lib_ac690x.a(startup.o)
                 0x01000000                _start
  *(.const_tab)
- .const_tab     0x01000104       0x18 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+ .const_tab     0x01000104       0x18 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
                 0x01000104                get_key_tab
                 0x01000108                find_dec_ops
                 0x01000114                fs_list
@@ -1689,7 +1689,7 @@ LOAD obj\Debug\apps_soundbox\usb_device\usb_key.o
  *vm_common.o(.text)
  *vm_printf.o(.text)
  *(.vm)
- .vm            0x0100011c      0x5ea C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+ .vm            0x0100011c      0x5ea C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
                 0x01000130                vm_delay
                 0x010001a4                spiflash_continuous_read_mode_reset
                 0x01000214                spiflash_send_addr
@@ -1719,288 +1719,288 @@ LOAD obj\Debug\apps_soundbox\usb_device\usb_key.o
  .version       0x01000706       0x14 obj\Debug\apps_soundbox\cpu\ac690x\version.o
  .version       0x0100071a        0xe ../include_lib/bluetooth_lib.a(version.o)
  *(.text* .rodata*)
- .text          0x01000728    0x58aa2 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
-                0x01014f8c                board_main
-                0x0101aa50                OSInit
-                0x0101aaa0                OSIdleTaskInit
-                0x0101ab94                OSTaskSwitchHook
-                0x0101abbe                vmm_init
-                0x0104eb48                bt_power_is_poweroff_probe
-                0x01052824                dct32
-                0x01053e88                sbc_fill_buf_d
- *fill*         0x010591ca        0x6 
- .rodata        0x010591d0     0xb0d4 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
-                0x0105c998                sbc_proto_4_40m0_d
-                0x0105ca38                synmatrix4_d
-                0x0105cab8                synmatrix8_d
-                0x0105cb38                const_table
-                0x0105de10                window_l
-                0x0105de58                sc18_sc09_csdct
-                0x0105dee4                imdct_s
-                0x0105df74                window_s
-                0x0105faf8                leavetable_d
+ .text          0x01000728    0x58ac6 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+                0x01014fb4                board_main
+                0x0101aa74                OSInit
+                0x0101aac4                OSIdleTaskInit
+                0x0101abb8                OSTaskSwitchHook
+                0x0101abe2                vmm_init
+                0x0104eb6c                bt_power_is_poweroff_probe
+                0x01052848                dct32
+                0x01053eac                sbc_fill_buf_d
+ *fill*         0x010591ee        0x2 
+ .rodata        0x010591f0     0xb0d4 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+                0x0105c9b8                sbc_proto_4_40m0_d
+                0x0105ca58                synmatrix4_d
+                0x0105cad8                synmatrix8_d
+                0x0105cb58                const_table
+                0x0105de30                window_l
+                0x0105de78                sc18_sc09_csdct
+                0x0105df04                imdct_s
+                0x0105df94                window_s
+                0x0105fb18                leavetable_d
  .rodata.str1.1
-                0x010642a4     0x3c4c C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+                0x010642c4     0x3c4c C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
                                0x3d60 (size before relaxing)
- .rodata.cst32  0x01067ef0      0x100 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
- .rodata.cst8   0x01067ff0       0x18 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
+ .rodata.cst32  0x01067f10      0x100 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+ .rodata.cst8   0x01068010       0x18 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
  .rodata.str4.4
-                0x01068008      0x10c C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
- .rodata.cst16  0x01068114       0x90 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
- .rodata.cst4   0x010681a4        0x4 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
- .text          0x010681a8        0x0 obj\Debug\apps_soundbox\cpu\ac690x\version.o
- .text          0x010681a8       0x6c ../include_lib/rtos_lib.a(os_cpu.o)
-                0x010681a8                OS_HighPrio
-                0x010681b2                OSCtxSw
- .text          0x01068214       0xae ../include_lib/bluetooth_lib.a(bigint_mul_core_bc51.o)
-                0x01068214                _bigint_mul_core_bc51
- *fill*         0x010682c2        0x2 
- .text          0x010682c4        0x0 ../include_lib/bluetooth_lib.a(version.o)
- .text          0x010682c4        0x0 ../include_lib/cpu_lib_ac690x.a(irq_driver_asm.o)
- .text          0x010682c4      0x170 ../include_lib/bluetooth/bt_syn_lib.a(bt_syn_asm.o)
-                0x010682c4                syn_memcpy
-                0x010682f8                syn_ps_seek_best_pos
- .text          0x01068434      0x4ee ../include_lib/dec/mp3_dec_lib.a(bc51_mp3_v2.o)
-                0x01068434                mpegaudio_synth_full_asm
-                0x010685fa                III_imdct_s
-                0x0106869e                fastsdct
-                0x01068780                imdct36
-                0x01068840                III_imdct_l
-                0x010688e4                get_bit_from_stream
- *fill*         0x01068922        0x2 
- .text          0x01068924      0x59e ../include_lib/dec/sbc_dec_lib.a(sbc_fun.o)
-                0x01068924                sbc_synthesize_four_d
-                0x01068a2c                sbc_synthesize_eight_d
-                0x01068b2a                sbc_get_bits
-                0x01068b84                sbc_dec_requantize
-                0x01068c78                sbc_synthesize_eight_ddx
-                0x01068eb6                sbc_tst_it
- *fill*         0x01068ec2        0x2 
- .text          0x01068ec4      0x1dc ../include_lib/aec/libBtCalling.a(rfft_afterprocess_asm.o)
-                0x01068ec4                rfft_afterprocess_asm
-                0x01068fb0                rifft_preprocess_asm
- .text          0x010690a0        0x0 C:\JL\pi32\lib\libc.a(lib_a-ctype_.o)
- .rodata        0x010690a0      0x281 C:\JL\pi32\lib\libc.a(lib_a-ctype_.o)
-                0x01069220                _ctype_
- *fill*         0x01069321        0x3 
- .text          0x01069324       0x3e C:\JL\pi32\lib\libc.a(lib_a-memcmp.o)
-                0x01069324                memcmp
- *fill*         0x01069362        0x2 
- .text          0x01069364       0x44 C:\JL\pi32\lib\libc.a(lib_a-strcasecmp.o)
-                0x01069364                strcasecmp
- .text          0x010693a8       0x16 C:\JL\pi32\lib\libc.a(lib_a-strchr.o)
-                0x010693a8                strchr
- *fill*         0x010693be        0x2 
- .text          0x010693c0       0x14 C:\JL\pi32\lib\libc.a(lib_a-strcmp.o)
-                0x010693c0                strcmp
- .text          0x010693d4       0x10 C:\JL\pi32\lib\libc.a(lib_a-strcpy.o)
-                0x010693d4                strcpy
- .text          0x010693e4        0xc C:\JL\pi32\lib\libc.a(lib_a-strlen.o)
-                0x010693e4                strlen
- .text          0x010693f0       0x24 C:\JL\pi32\lib\libc.a(lib_a-strncmp.o)
-                0x010693f0                strncmp
- .text          0x01069414       0x2e C:\JL\pi32\lib\libc.a(lib_a-strstr.o)
-                0x01069414                strstr
- *fill*         0x01069442        0x2 
- .text          0x01069444       0x10 C:\JL\pi32\lib\libc.a(lib_a-strtok.o)
-                0x01069444                strtok
- .text          0x01069454       0x58 C:\JL\pi32\lib\libc.a(lib_a-strtok_r.o)
-                0x01069454                __strtok_r
-                0x010694a8                strtok_r
- .text          0x010694ac        0x0 C:\JL\pi32\lib\libc.a(lib_a-impure.o)
- .rodata        0x010694ac        0x4 C:\JL\pi32\lib\libc.a(lib_a-impure.o)
-                0x010694ac                _global_impure_ptr
+                0x01068028      0x10c C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+ .rodata.cst16  0x01068134       0x90 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+ .rodata.cst4   0x010681c4        0x4 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+ .text          0x010681c8        0x0 obj\Debug\apps_soundbox\cpu\ac690x\version.o
+ .text          0x010681c8       0x6c ../include_lib/rtos_lib.a(os_cpu.o)
+                0x010681c8                OS_HighPrio
+                0x010681d2                OSCtxSw
+ .text          0x01068234       0xae ../include_lib/bluetooth_lib.a(bigint_mul_core_bc51.o)
+                0x01068234                _bigint_mul_core_bc51
+ *fill*         0x010682e2        0x2 
+ .text          0x010682e4        0x0 ../include_lib/bluetooth_lib.a(version.o)
+ .text          0x010682e4        0x0 ../include_lib/cpu_lib_ac690x.a(irq_driver_asm.o)
+ .text          0x010682e4      0x170 ../include_lib/bluetooth/bt_syn_lib.a(bt_syn_asm.o)
+                0x010682e4                syn_memcpy
+                0x01068318                syn_ps_seek_best_pos
+ .text          0x01068454      0x4ee ../include_lib/dec/mp3_dec_lib.a(bc51_mp3_v2.o)
+                0x01068454                mpegaudio_synth_full_asm
+                0x0106861a                III_imdct_s
+                0x010686be                fastsdct
+                0x010687a0                imdct36
+                0x01068860                III_imdct_l
+                0x01068904                get_bit_from_stream
+ *fill*         0x01068942        0x2 
+ .text          0x01068944      0x59e ../include_lib/dec/sbc_dec_lib.a(sbc_fun.o)
+                0x01068944                sbc_synthesize_four_d
+                0x01068a4c                sbc_synthesize_eight_d
+                0x01068b4a                sbc_get_bits
+                0x01068ba4                sbc_dec_requantize
+                0x01068c98                sbc_synthesize_eight_ddx
+                0x01068ed6                sbc_tst_it
+ *fill*         0x01068ee2        0x2 
+ .text          0x01068ee4      0x1dc ../include_lib/aec/libBtCalling.a(rfft_afterprocess_asm.o)
+                0x01068ee4                rfft_afterprocess_asm
+                0x01068fd0                rifft_preprocess_asm
+ .text          0x010690c0        0x0 C:\JL\pi32\lib\libc.a(lib_a-ctype_.o)
+ .rodata        0x010690c0      0x281 C:\JL\pi32\lib\libc.a(lib_a-ctype_.o)
+                0x01069240                _ctype_
+ *fill*         0x01069341        0x3 
+ .text          0x01069344       0x3e C:\JL\pi32\lib\libc.a(lib_a-memcmp.o)
+                0x01069344                memcmp
+ *fill*         0x01069382        0x2 
+ .text          0x01069384       0x44 C:\JL\pi32\lib\libc.a(lib_a-strcasecmp.o)
+                0x01069384                strcasecmp
+ .text          0x010693c8       0x16 C:\JL\pi32\lib\libc.a(lib_a-strchr.o)
+                0x010693c8                strchr
+ *fill*         0x010693de        0x2 
+ .text          0x010693e0       0x14 C:\JL\pi32\lib\libc.a(lib_a-strcmp.o)
+                0x010693e0                strcmp
+ .text          0x010693f4       0x10 C:\JL\pi32\lib\libc.a(lib_a-strcpy.o)
+                0x010693f4                strcpy
+ .text          0x01069404        0xc C:\JL\pi32\lib\libc.a(lib_a-strlen.o)
+                0x01069404                strlen
+ .text          0x01069410       0x24 C:\JL\pi32\lib\libc.a(lib_a-strncmp.o)
+                0x01069410                strncmp
+ .text          0x01069434       0x2e C:\JL\pi32\lib\libc.a(lib_a-strstr.o)
+                0x01069434                strstr
+ *fill*         0x01069462        0x2 
+ .text          0x01069464       0x10 C:\JL\pi32\lib\libc.a(lib_a-strtok.o)
+                0x01069464                strtok
+ .text          0x01069474       0x58 C:\JL\pi32\lib\libc.a(lib_a-strtok_r.o)
+                0x01069474                __strtok_r
+                0x010694c8                strtok_r
+ .text          0x010694cc        0x0 C:\JL\pi32\lib\libc.a(lib_a-impure.o)
+ .rodata        0x010694cc        0x4 C:\JL\pi32\lib\libc.a(lib_a-impure.o)
+                0x010694cc                _global_impure_ptr
  .rodata.str1.1
-                0x010694b0        0x0 C:\JL\pi32\lib\libc.a(lib_a-impure.o)
+                0x010694d0        0x0 C:\JL\pi32\lib\libc.a(lib_a-impure.o)
                                   0x2 (size before relaxing)
- .text          0x010694b0       0x10 C:\JL\pi32\lib\libcompiler-rt.a(ashldi3.o)
-                0x010694b0                __ashldi3
- .text          0x010694c0       0x32 C:\JL\pi32\lib\libcompiler-rt.a(divdi3.o)
-                0x010694c0                __divdi3
- *fill*         0x010694f2        0x2 
- .text          0x010694f4       0x5c C:\JL\pi32\lib\libcompiler-rt.a(extendsfdf2.o)
-                0x010694f4                __extendsfdf2
- .text          0x01069550       0x4c C:\JL\pi32\lib\libcompiler-rt.a(fixsfsi.o)
-                0x01069550                __fixsfsi
- .text          0x0106959c       0x56 C:\JL\pi32\lib\libcompiler-rt.a(floatunsisf.o)
-                0x0106959c                __floatunsisf
- *fill*         0x010695f2        0x2 
- .text          0x010695f4       0x10 C:\JL\pi32\lib\libcompiler-rt.a(lshrdi3.o)
-                0x010695f4                __lshrdi3
- .text          0x01069604      0x2d0 C:\JL\pi32\lib\libcompiler-rt.a(muldf3.o)
-                0x01069604                __muldf3
- .text          0x010698d4       0x12 C:\JL\pi32\lib\libcompiler-rt.a(muldi3.o)
-                0x010698d4                __muldi3
- *fill*         0x010698e6        0x2 
- .text          0x010698e8      0x13c C:\JL\pi32\lib\libcompiler-rt.a(mulsf3.o)
-                0x010698e8                __mulsf3
- .text          0x01069a24       0xe8 C:\JL\pi32\lib\libcompiler-rt.a(truncdfsf2.o)
-                0x01069a24                __truncdfsf2
- .text          0x01069b0c       0x10 C:\JL\pi32\lib\libcompiler-rt.a(udivdi3.o)
-                0x01069b0c                __udivdi3
- .text          0x01069b1c       0x8e C:\JL\pi32\lib\libcompiler-rt.a(udivmoddi4.o)
-                0x01069b1c                __udivmoddi4
- *fill*         0x01069baa        0x2 
- .text          0x01069bac       0x14 C:\JL\pi32\lib\libcompiler-rt.a(umoddi3.o)
-                0x01069bac                __umoddi3
-                0x01069bc0                . = ALIGN (0x4)
-                0x01069bc0                lmp_hci_handler_begin = .
+ .text          0x010694d0       0x10 C:\JL\pi32\lib\libcompiler-rt.a(ashldi3.o)
+                0x010694d0                __ashldi3
+ .text          0x010694e0       0x32 C:\JL\pi32\lib\libcompiler-rt.a(divdi3.o)
+                0x010694e0                __divdi3
+ *fill*         0x01069512        0x2 
+ .text          0x01069514       0x5c C:\JL\pi32\lib\libcompiler-rt.a(extendsfdf2.o)
+                0x01069514                __extendsfdf2
+ .text          0x01069570       0x4c C:\JL\pi32\lib\libcompiler-rt.a(fixsfsi.o)
+                0x01069570                __fixsfsi
+ .text          0x010695bc       0x56 C:\JL\pi32\lib\libcompiler-rt.a(floatunsisf.o)
+                0x010695bc                __floatunsisf
+ *fill*         0x01069612        0x2 
+ .text          0x01069614       0x10 C:\JL\pi32\lib\libcompiler-rt.a(lshrdi3.o)
+                0x01069614                __lshrdi3
+ .text          0x01069624      0x2d0 C:\JL\pi32\lib\libcompiler-rt.a(muldf3.o)
+                0x01069624                __muldf3
+ .text          0x010698f4       0x12 C:\JL\pi32\lib\libcompiler-rt.a(muldi3.o)
+                0x010698f4                __muldi3
+ *fill*         0x01069906        0x2 
+ .text          0x01069908      0x13c C:\JL\pi32\lib\libcompiler-rt.a(mulsf3.o)
+                0x01069908                __mulsf3
+ .text          0x01069a44       0xe8 C:\JL\pi32\lib\libcompiler-rt.a(truncdfsf2.o)
+                0x01069a44                __truncdfsf2
+ .text          0x01069b2c       0x10 C:\JL\pi32\lib\libcompiler-rt.a(udivdi3.o)
+                0x01069b2c                __udivdi3
+ .text          0x01069b3c       0x8e C:\JL\pi32\lib\libcompiler-rt.a(udivmoddi4.o)
+                0x01069b3c                __udivmoddi4
+ *fill*         0x01069bca        0x2 
+ .text          0x01069bcc       0x14 C:\JL\pi32\lib\libcompiler-rt.a(umoddi3.o)
+                0x01069bcc                __umoddi3
+                0x01069be0                . = ALIGN (0x4)
+                0x01069be0                lmp_hci_handler_begin = .
  *(.lmp_hci_handler)
  .lmp_hci_handler
-                0x01069bc0       0x50 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
-                0x01069bc0                device_manager_hci_handler
-                0x01069bd4                lmp_def_hci_handler
-                0x01069be8                master_hci_cmd_handler
-                0x01069bfc                slave_hci_cmd_handler
-                0x01069c10                lmp_hci_handler_end = .
-                0x01069c10                a2dp_sink_media_probe_begin = .
+                0x01069be0       0x50 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+                0x01069be0                device_manager_hci_handler
+                0x01069bf4                lmp_def_hci_handler
+                0x01069c08                master_hci_cmd_handler
+                0x01069c1c                slave_hci_cmd_handler
+                0x01069c30                lmp_hci_handler_end = .
+                0x01069c30                a2dp_sink_media_probe_begin = .
  *(.a2dp_sink_media_probe)
  .a2dp_sink_media_probe
-                0x01069c10       0x30 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
-                0x01069c10                a2dp_aac_probe
-                0x01069c28                a2dp_sbc_probe
-                0x01069c40                a2dp_sink_media_probe_end = .
-                0x01069c40                a2dp_sink_media_codec_begin = .
+                0x01069c30       0x30 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+                0x01069c30                a2dp_aac_probe
+                0x01069c48                a2dp_sbc_probe
+                0x01069c60                a2dp_sink_media_probe_end = .
+                0x01069c60                a2dp_sink_media_codec_begin = .
  *(.a2dp_sink_media_codec)
  .a2dp_sink_media_codec
-                0x01069c40       0x30 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
-                0x01069c40                aac_sink_codec
-                0x01069c58                sbc_sink_codec
-                0x01069c70                a2dp_sink_media_codec_end = .
-                0x01069c70                a2dp_source_media_codec_begin = .
+                0x01069c60       0x30 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+                0x01069c60                aac_sink_codec
+                0x01069c78                sbc_sink_codec
+                0x01069c90                a2dp_sink_media_codec_end = .
+                0x01069c90                a2dp_source_media_codec_begin = .
  *(.a2dp_source_media_codec)
  .a2dp_source_media_codec
-                0x01069c70       0x18 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
-                0x01069c70                a2dp_source_codec
-                0x01069c88                a2dp_source_media_codec_end = .
-                0x01069c88                a2dp_event_handler_begin = .
+                0x01069c90       0x18 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+                0x01069c90                a2dp_source_codec
+                0x01069ca8                a2dp_source_media_codec_end = .
+                0x01069ca8                a2dp_event_handler_begin = .
  *(.a2dp_event_handler)
  .a2dp_event_handler
-                0x01069c88       0x70 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
-                0x01069c88                a2dp_sink_event_handler
-                0x01069ca4                a2dp_source_event_handler
-                0x01069cc0                probe_source_event_handler
-                0x01069cdc                avctp_a2dp_event_handler
-                0x01069cf8                a2dp_event_handler_end = .
-                0x01069cf8                clock_switcher_begin = .
+                0x01069ca8       0x70 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+                0x01069ca8                a2dp_sink_event_handler
+                0x01069cc4                a2dp_source_event_handler
+                0x01069ce0                probe_source_event_handler
+                0x01069cfc                avctp_a2dp_event_handler
+                0x01069d18                a2dp_event_handler_end = .
+                0x01069d18                clock_switcher_begin = .
  *(.clock_switch.fun)
  .clock_switch.fun
-                0x01069cf8        0xc C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
-                0x01069cf8                __switch_init_ad_key0_clk_reset
-                0x01069cfc                __switch_init_timer0_clk_reset
-                0x01069d00                __switch_init_uart_reset
-                0x01069d04                clock_switcher_end = .
-                0x01069d04                bt_sleep_begin = .
+                0x01069d18        0xc C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+                0x01069d18                __switch_init_ad_key0_clk_reset
+                0x01069d1c                __switch_init_timer0_clk_reset
+                0x01069d20                __switch_init_uart_reset
+                0x01069d24                clock_switcher_end = .
+                0x01069d24                bt_sleep_begin = .
  *(.bt_sleep)
- .bt_sleep      0x01069d04       0x60 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
-                0x01069d04                bt_suspend_hci_resumehci_release
-                0x01069d10                bt_suspend_a2dp_resumea2dp_release
-                0x01069d1c                bt_suspend_avctp_resumeavctp_release
-                0x01069d28                bt_suspend_hfp_resumehfp_release
-                0x01069d34                bt_suspend_hid_resumehid_release
-                0x01069d40                bt_suspend_sdp_resumesdp_release
-                0x01069d4c                bt_suspend_sdp_slave_resumesdp_slave_release
-                0x01069d58                bt_suspend_user_cmd_loop_resumeuser_cmd_loop_release
-                0x01069d64                bt_sleep_end = .
+ .bt_sleep      0x01069d24       0x60 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+                0x01069d24                bt_suspend_hci_resumehci_release
+                0x01069d30                bt_suspend_a2dp_resumea2dp_release
+                0x01069d3c                bt_suspend_avctp_resumeavctp_release
+                0x01069d48                bt_suspend_hfp_resumehfp_release
+                0x01069d54                bt_suspend_hid_resumehid_release
+                0x01069d60                bt_suspend_sdp_resumesdp_release
+                0x01069d6c                bt_suspend_sdp_slave_resumesdp_slave_release
+                0x01069d78                bt_suspend_user_cmd_loop_resumeuser_cmd_loop_release
+                0x01069d84                bt_sleep_end = .
  *(.ble)
- .ble           0x01069d64       0x10 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
-                0x01069d64                ble_h4_can_send_packet_now
-                0x01069d68                ble_h4_send_packet
-                0x01069d6c                ble_h4_packet_handler
-                0x01069d70                __ble_ops
+ .ble           0x01069d84       0x10 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+                0x01069d84                ble_h4_can_send_packet_now
+                0x01069d88                ble_h4_send_packet
+                0x01069d8c                ble_h4_packet_handler
+                0x01069d90                __ble_ops
  *(.bredr)
  *(.bt_power)
  *(.poweroff_flash)
  .poweroff_flash
-                0x01069d74       0x20 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
-                0x01069d94                ble_text_begin = .
+                0x01069d94       0x20 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+                0x01069db4                ble_text_begin = .
  *(.ble_irq_text)
-                0x01069d94                ble_text_end = .
-                0x01069d94                bredr_text_begin = .
+                0x01069db4                ble_text_end = .
+                0x01069db4                bredr_text_begin = .
  *(.bredr_irq_text)
  .bredr_irq_text
-                0x01069d94      0x1c4 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
-                0x01069f58                bredr_text_end = .
+                0x01069db4      0x1c4 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+                0x01069f78                bredr_text_end = .
  *(.zebra)
  *(.sys_cfg)
  *(.ape_text)
-                0x01069f58                _task_list_begin = .
+                0x01069f78                _task_list_begin = .
  *(.task_info)
- .task_info     0x01069f58       0x44 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
-                0x01069f70                task_connect_dev
-                0x01069f74                task_list
-                0x01069f9c                _task_list_end = .
-                0x01069f9c                poweroff_text_begin = .
+ .task_info     0x01069f78       0x44 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+                0x01069f90                task_connect_dev
+                0x01069f94                task_list
+                0x01069fbc                _task_list_end = .
+                0x01069fbc                poweroff_text_begin = .
  *(.poweroff_text)
  .poweroff_text
-                0x01069f9c     0x16c4 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
-                0x01069ff0                radio_set_eninv
-                0x0106a010                irq_disable
-                0x0106a028                irq_enable
-                0x0106a040                bt_power_off
-                0x0106a16c                slot_timer_remove
-                0x0106a1a4                power_baseband_ioctrl
-                0x0106a1f8                baseband_ioctrl
-                0x0106a20c                irq_handler_register
-                0x0106a228                irq_global_enable
-                0x0106a2ac                irq_global_disable
-                0x0106a2c4                slot_timer_register_init
-                0x0106a360                slot_timer_register
-                0x0106a478                slot_timer_init
-                0x0106a488                irq_init
-                0x0106a4a0                timer0_init_test
-                0x0106a4fc                irq_sys_enable
-                0x0106a514                poweroff_wait_pending
-                0x0106a6c8                test_power_init
-                0x0106a8b4                test_power_off
-                0x0106a8b8                bredr_main_start_poweroff
-                0x0106a938                test_exception_isr
-                0x0106a974                irq_common_handler
-                0x0106ab80                bd_freq_table_init
-                0x0106abc8                bt_poweroff_recover
-                0x0106abdc                irq_sys_disable
-                0x0106ac30                poweroff_memset
-                0x0106ac40                bdhw_set_afh_poweroff
-                0x0106acb8                bt_debug_poweroff_isr
-                0x0106ad3c                poweroff_irq_rx_handler
-                0x0106add4                check_slot_timer_handler
-                0x0106ae50                bt_power_wakeup_irq_handle
-                0x0106aed4                push_pop
-                0x0106af2a                poweroff_memcpy
-                0x0106af40                push_pop_bd_base
-                0x0106afac                radio_set_eninv_open
-                0x0106b018                check_ram1_addr
-                0x0106b074                reg_memcpy
-                0x0106b08a                reg_push_pop
-                0x0106b270                call_main_deal
-                0x0106b36c                _btpower_up
-                0x0106b380                get_ram_addr
-                0x0106b388                RF_poweroff_init
-                0x0106b530                error_isr_handler
+                0x01069fbc     0x16c4 C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+                0x0106a010                radio_set_eninv
+                0x0106a030                irq_disable
+                0x0106a048                irq_enable
+                0x0106a060                bt_power_off
+                0x0106a18c                slot_timer_remove
+                0x0106a1c4                power_baseband_ioctrl
+                0x0106a218                baseband_ioctrl
+                0x0106a22c                irq_handler_register
+                0x0106a248                irq_global_enable
+                0x0106a2cc                irq_global_disable
+                0x0106a2e4                slot_timer_register_init
+                0x0106a380                slot_timer_register
+                0x0106a498                slot_timer_init
+                0x0106a4a8                irq_init
+                0x0106a4c0                timer0_init_test
+                0x0106a51c                irq_sys_enable
+                0x0106a534                poweroff_wait_pending
+                0x0106a6e8                test_power_init
+                0x0106a8d4                test_power_off
+                0x0106a8d8                bredr_main_start_poweroff
+                0x0106a958                test_exception_isr
+                0x0106a994                irq_common_handler
+                0x0106aba0                bd_freq_table_init
+                0x0106abe8                bt_poweroff_recover
+                0x0106abfc                irq_sys_disable
+                0x0106ac50                poweroff_memset
+                0x0106ac60                bdhw_set_afh_poweroff
+                0x0106acd8                bt_debug_poweroff_isr
+                0x0106ad5c                poweroff_irq_rx_handler
+                0x0106adf4                check_slot_timer_handler
+                0x0106ae70                bt_power_wakeup_irq_handle
+                0x0106aef4                push_pop
+                0x0106af4a                poweroff_memcpy
+                0x0106af60                push_pop_bd_base
+                0x0106afcc                radio_set_eninv_open
+                0x0106b038                check_ram1_addr
+                0x0106b094                reg_memcpy
+                0x0106b0aa                reg_push_pop
+                0x0106b290                call_main_deal
+                0x0106b38c                _btpower_up
+                0x0106b3a0                get_ram_addr
+                0x0106b3a8                RF_poweroff_init
+                0x0106b550                error_isr_handler
  .poweroff_text
-                0x0106b660       0x26 ../include_lib/cpu_lib_ac690x.a(irq_driver_asm.o)
-                0x0106b660                CPU_INT_DIS
-                0x0106b672                CPU_INT_EN
-                0x0106b686                poweroff_text_end = .
-                0x0106b686                text_end = .
+                0x0106b680       0x26 ../include_lib/cpu_lib_ac690x.a(irq_driver_asm.o)
+                0x0106b680                CPU_INT_DIS
+                0x0106b692                CPU_INT_EN
+                0x0106b6a6                poweroff_text_end = .
+                0x0106b6a6                text_end = .
 
-.version        0x0106b686       0x1a
+.version        0x0106b6a6       0x1a
  *(.ver_magic_start)
  .ver_magic_start
-                0x0106b686        0xe C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
-                0x0106b686                ver_start_magic
+                0x0106b6a6        0xe C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+                0x0106b6a6                ver_start_magic
  *(.version)
  *(.ver_magic_end)
  .ver_magic_end
-                0x0106b694        0xc C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-316242.o
-                0x0106b694                ver_end_magic
+                0x0106b6b4        0xc C:\Users\LEVIAT~1\AppData\Local\Temp\lto-llvm-bbc8ec.o
+                0x0106b6b4                ver_end_magic
                 0x00300000                data_addr = ADDR (.data)
-                0x0106b686                data_begin = text_end
+                0x0106b6a6                data_begin = text_end
                 0x00001562                data1_size = SIZEOF (.data)
                 0x003016f0                bss_begin = ADDR (.bss)
                 0x0000624c                bss_size = SIZEOF (.bss)
                 0x00340080                ram1_addr = ADDR (.data1)
-                0x0106cbe8                ram1_begin = (text_end + SIZEOF (.data))
+                0x0106cc08                ram1_begin = (text_end + SIZEOF (.data))
                 0x00004610                ram1_size = SIZEOF (.data1)
                 0x00344690                bss_ram1_begin = ADDR (.bss_ram1)
                 0x0000157c                bss_ram1_size = SIZEOF (.bss_ram1)
