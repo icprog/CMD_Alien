@@ -27,6 +27,10 @@
 #define TONE_PHY_TASK_STACK_SIZE    (1024 * 2)
 #define UI_TASK_STACK_SIZE          (1024 * 2)
 
+
+//开机未连接时播放三字经使能
+#define PLAY_SANZIJIN_EN		1
+
 //配置对箱
 ///< 蓝牙对箱使能,对箱暂时不开放.ble,后台和app
 #define   BT_TWS                      0   

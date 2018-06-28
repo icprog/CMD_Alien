@@ -55,7 +55,10 @@
 #define BPF_TEST_MP3       		"/test.***"
 #define BPF_CONNECT_ERR    		"/con_err.***"
 #define BPF_ALARM_MP3			"/alarm.***"
-
+#if PLAY_SANZIJIN_EN
+#define BPF_START_MP3			"/sanzijin.***"
+#define BPF_P_CONNECT			"/pcon.***"
+#endif
 typedef struct __PLAY_SEL_PARA //para
 {
     u32 max_file_number;

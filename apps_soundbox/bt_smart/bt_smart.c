@@ -332,6 +332,11 @@ void bt_smart_msg_deal(void *priv, int *msg)
 {
 	switch(msg[0])
 	{
+#if PLAY_SANZIJIN_EN
+		case MSG_BT_DISCONNET_VOICE:
+			bt_prompt_play_by_name(AI_TOY_NOTICE_NOCONNECT,NULL);
+			break;
+#endif
 		/* case MSG_WECHAT: *///功能还没有实现
 		case MSG_CH_2_EN:
 		case MSG_EN_2_CH:

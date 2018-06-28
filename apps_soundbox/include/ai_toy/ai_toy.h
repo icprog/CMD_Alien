@@ -35,7 +35,9 @@
 #define AI_TOY_NOTICE_P_CONNECT		"pcon.***"
 #define AI_TOY_NOTICE_NO_NET		"nonet.***"
 #define AI_TOY_NOTICE_MODE_TF		"tfmode.***"
-
+#if PLAY_SANZIJIN_EN
+#define AI_TOY_NOTICE_NOCONNECT		"sanzijin.***"
+#endif
 enum
 {
 	AI_TOY_DIR_MODE_CHILDREN_SONG = 0x0,

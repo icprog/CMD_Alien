@@ -225,6 +225,8 @@ enum
     SYS_EVENT_DEC_SET_END,
 
     SYS_EVENT_PLAY_SEL_END,
+    
+	MSG_BT_DISCONNET_VOICE,	///开机蓝牙未连接播放三字经
 	MSG_NULL = 0xff,
 };
 

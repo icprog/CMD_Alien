@@ -36,7 +36,7 @@ set TEST_BOX_WIRELESS_UPDATE=-todev sound_box -fi jl_690x.bin -ld 0x0000 -rd 0x0
 cd tone_resource
 copy *.mp3 ..\
 cd ..
-isd_download.exe -tonorflash -dev br17 -boot 0x2000 -div6 -wait 300 -f uboot.boot sdram.app bt_cfg.bin fast_run.bin btmode.mp3  btconok.mp3 btdisc.mp3 ring.mp3 con_err.mp3 child.mp3 stroy.mp3 english.mp3 chinese.mp3 music.mp3 instum.mp3 sleep.mp3 poweron.mp3 poweroff.mp3 nofile.mp3 nofile1.mp3 pause.mp3 play.mp3 next.mp3 prev.mp3 inssd.mp3 tfmode.mp3 di.mp3 do.mp3 micmode.mp3 pcon.mp3 lowpower.mp3 lowpowoff.mp3 nonet.mp3 micexit.mp3 tfoffline.mp3 tfonline.mp3 updateok.mp3 upfail.mp3 fw_ver.str -key AC690X.key
+isd_download.exe -tonorflash -dev br17 -boot 0x2000 -div6 -wait 300 -f uboot.boot sdram.app bt_cfg.bin fast_run.bin btmode.mp3  btconok.mp3 btdisc.mp3 ring.mp3 child.mp3 stroy.mp3 english.mp3 chinese.mp3 music.mp3 instum.mp3 sleep.mp3 poweron.mp3 poweroff.mp3 nofile.mp3 nofile1.mp3 pause.mp3 play.mp3 next.mp3 prev.mp3 inssd.mp3 tfmode.mp3 di.mp3 do.mp3 micmode.mp3 pcon.mp3 lowpower.mp3 lowpowoff.mp3 nonet.mp3 micexit.mp3 tfoffline.mp3 tfonline.mp3 updateok.mp3 upfail.mp3 alarm.mp3 sanzijin.mp3 fw_ver.str -key AC690X.key
 
 ::%TEST_BOX_WIRELESS_UPDATE% //指定蓝牙名字sound_box，蓝牙无线升级命令
 ::-format cfg

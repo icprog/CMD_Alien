@@ -151,6 +151,9 @@ void create_bt_msg_task(char *task_name)
     }
 }
 
+#if PLAY_SANZIJIN_EN
+u8 play_sel_stop_flag = 0;
+#endif
 /*提示音开始，资源管理线程接口，用户不能调用*/
 static void tone_mutex_play()
 {
@@ -166,7 +169,14 @@ static void tone_mutex_play()
     {
         user_val->play_phone_number_flag = 1;
     }
-
+#if PLAY_SANZIJIN_EN
+	if(AI_TOY_NOTICE_P_CONNECT == user_val->tone_by_file_name){
+		play_sel_stop_flag = 1;		//未连接提示音开始播放
+	}
+	else{
+		play_sel_stop_flag = 0;
+	}
+#endif
     free_fun((void **)&psel_p);
     os_sem_post(&tone_manage_semp);
 }
@@ -185,6 +195,15 @@ static void tone_mutex_stop()
         user_val->play_phone_number_flag = 0;
         update_bt_current_status(NULL, BT_STATUS_PHONE_INCOME, 0);
     }
+#if PLAY_SANZIJIN_EN
+	if(play_sel_stop_flag){
+		play_sel_stop_flag = 2;		//未连接提示音播放完成
+		os_taskq_post("btmsg", 1, MSG_BT_DISCONNET_VOICE);	//推送播放三字经的消息
+	}
+	else{
+		play_sel_stop_flag = 0;
+	}
+#endif
 }
 u8 wait_phone_number_play = 0;
 /*获取到来电电话号码，用于报号功能*/
@@ -389,6 +408,15 @@ void user_ctrl_prompt_tone_play(u8 status,void *ptr)
 			printf("psel_p->let = %c\n",psel_p->let);
 
             break;
+
+#if PLAY_SANZIJIN_EN
+        case BT_STATUS_START_DISCONNECT:
+            psel_p->max_file_number = 1;
+            psel_p->delay = 10;
+            psel_p->rpt_time = 0;
+            psel_p->file_name[0] = BPF_START_MP3;
+            break;	
+#endif			
         case BT_STATUS_PHONE_INCOME:
             psel_p->max_file_number = 1;
             psel_p->delay = 10;
@@ -440,7 +468,16 @@ void bt_prompt_play_by_name(void * file_name, void * let)
 #ifdef BT_PROMPT_EN         //定义在avctp_user.h
     puts("bt_prompt_play\n");
     user_val->tone_by_file_name = file_name;
+#if PLAY_SANZIJIN_EN	
+	if(AI_TOY_NOTICE_NOCONNECT == file_name){
+		user_ctrl_prompt_tone_play(BT_STATUS_START_DISCONNECT, let);//开始播放三字经
+	}
+	else{
+		user_ctrl_prompt_tone_play(BT_STATUS_TONE_BY_FILE_NAME, let);
+	}
+#else
 	user_ctrl_prompt_tone_play(BT_STATUS_TONE_BY_FILE_NAME, let);
+#endif
 #endif
 
 }

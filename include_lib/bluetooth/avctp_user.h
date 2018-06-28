@@ -256,6 +256,8 @@ typedef enum
     BT_STATUS_CONNECTING       ,/*已连接，没有电话和音乐在活动*/
     BT_STATUS_TAKEING_PHONE    ,/*正在电话*/
     BT_STATUS_PLAYING_MUSIC    ,/*正在音乐*/
+
+	BT_STATUS_START_DISCONNECT ,/*开机未连接，播放三字经*/
 }STATUS_FOR_USER;
 
 typedef enum
