@@ -110,13 +110,13 @@ const u8 bt_ir_table[4][21] =				//红外遥控转换表
 						/*00  220k 幼儿	 */   NO_MSG,\
 						/*01  100k 小学	 */   NO_MSG,\
 						/*02  51k  初中	 */   NO_MSG,\
-						/*03  33k  英译中  */    NO_MSG,\
-						/*04  24K  中译英  */    NO_MSG,\
-						/*05  15k  功能转换*/ MSG_CHANGE_WORKMODE,\
-						/*06  9.1K 上一曲  */    MSG_BT_PREV_FILE,\
-						/*07  6.2k 下一曲  */    MSG_BT_NEXT_FILE,\
+						/*03  33k  英译中  */    MSG_BT_PP,\
+						/*04  24K  中译英  */    MSG_BT_PP,\
+						/*05  15k  功能转换*/ MSG_BT_PP,\
+						/*06  9.1K 上一曲  */    MSG_BT_PP,\
+						/*07  6.2k 下一曲  */    MSG_BT_PP,\
 						/*08  3K   暂停播放*/ MSG_BT_PP,\
-						/*09  0K   语音点播*/     MSG_SPEECH_INPUT,
+						/*09  0K   语音点播*/     MSG_BT_PP,
 
 #define ADKEY_BT_LONG		\
                         /*00*/    NO_MSG,\
@@ -124,11 +124,11 @@ const u8 bt_ir_table[4][21] =				//红外遥控转换表
                         /*02*/    NO_MSG,\
                         /*03*/    NO_MSG,\
                         /*04*/    NO_MSG,\
-                        /*05*/    MSG_CHANGE_NET_RES_SUB_JUNIOR,\
-                        /*06*/    MSG_EN_2_CH,\
-                        /*07*/    MSG_CH_2_EN,\
-                        /*08*/    MSG_CHANGE_NET_RES_CHILD,\
-                        /*09*/    MSG_CHANGE_NET_RES_SUB_PRIMARY,
+                        /*05*/    MSG_SPEECH_INPUT,\
+                        /*06*/    MSG_SPEECH_INPUT,\
+                        /*07*/    MSG_SPEECH_INPUT,\
+                        /*08*/    MSG_SPEECH_INPUT,\
+                        /*09*/    MSG_SPEECH_INPUT,
 
 
 #define ADKEY_BT_HOLD		\

@@ -305,11 +305,11 @@ const u32 BT_Double_Click_msg_tab[10] =
                         /*02*/    NO_MSG,\
                         /*03*/    NO_MSG,\
                         /*04*/    NO_MSG,\
-                        /*05*/    MSG_CHANGE_NET_RES_VER_JUNIOR,\
-                        /*06*/    MSG_CHANGE_NET_RES_GRADE_PRIMARY,\
-                        /*07*/    MSG_CHANGE_NET_RES_GRADE_JUNIOR,\
+                        /*05*/    MSG_BT_CALL_LAST_NO,\
+                        /*06*/    MSG_BT_CALL_LAST_NO,\
+                        /*07*/    MSG_BT_CALL_LAST_NO,\
                         /*08*/    MSG_BT_CALL_LAST_NO,\
-                        /*09*/    MSG_CHANGE_NET_RES_VER_PRIMARY,
+                        /*09*/    MSG_BT_CALL_LAST_NO,
 };
 
 /*----------------------------------------------------------------------------*/

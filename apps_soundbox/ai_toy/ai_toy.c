@@ -173,24 +173,24 @@ void AI_toy_update_disconnect_ble(void)
 static u8 port3_cur_status = 0;
 void AI_toy_led_init(void)
 {
-	PORTR_PU(PORTR3,0);
-	PORTR_PD(PORTR3,0);
-	PORTR_DIR(PORTR3,0);
-	PORTR_DIE(PORTR3,1);
-	port3_cur_status = 0;
-	PORTR_OUT(PORTR3,port3_cur_status);
+	PORTR_PU(PORTR1,0);
+	PORTR_PD(PORTR1,0);
+	PORTR_DIR(PORTR1,0);
+	PORTR_DIE(PORTR1,1);
+	port3_cur_status = 1;
+	PORTR_OUT(PORTR1,port3_cur_status);
 }
 
 void AI_toy_led_set_status(u8 status)
 {
 	port3_cur_status = status;
-	PORTR_OUT(PORTR3,port3_cur_status);
+	PORTR_OUT(PORTR1,port3_cur_status);
 }
 
 void AI_toy_led_set_swap(u8 status)
 {
 	port3_cur_status = !port3_cur_status;
-	PORTR_OUT(PORTR3,port3_cur_status);
+	PORTR_OUT(PORTR1,port3_cur_status);
 }
 
 void AI_toy_creat_dir(FILE_OPERATE *fop)
@@ -408,6 +408,7 @@ static u32 AI_toy_music_play(MUSIC_OP_API *m_op_api,ENUM_DEV_SEL_MODE dev_sel,u3
 	{
 		/* EyeEffectCtl(EFFECTSOUNDCOLUMNSLOW); */
 		eye_led_api(EFFECT_PLAY, 0 ,0);
+		bt_smart_led_flick(0, 0);
 		AI_toy_pp_st = DECODER_PLAY;
 		/* dac_channel_on(MUSIC_CHANNEL, FADE_ON); */
 	}
@@ -429,6 +430,7 @@ static _DECODE_STATUS AI_toy_music_pp(MUSIC_OP_API *mapi)
 	{
 		/* EyeEffectCtl(EFFECT_PAUSE); */
 		eye_led_api(EFFECT_PAUSE, 0 ,0);
+		bt_smart_led_flick(0, 0);
 		mapi->dop_api->dec_api.save_brk = 1;
 		music_stop_decoder(mapi);
 		mapi->dop_api->dec_api.save_brk = 0;
@@ -850,7 +852,7 @@ void AI_toy_music_task(void *parg)
 #endif
 
 
-	bt_smart_led_blink(200, 2);	
+	//bt_smart_led_blink(200, 2);	
 
 	if(microphone_enable)
 	{
@@ -931,6 +933,7 @@ void AI_toy_music_task(void *parg)
 	{
 		//提示设备不在线	
 		AI_toy_printf("no dev !!!!\n");
+		bt_smart_led_flick(500, 0);
 		n_err = notice_player_play_by_path(MUSIC_TASK_NAME, 
 				AI_TOY_NOTICE_MODE_TF, 
 				AI_toy_tf_mode_notice_play_callback,
@@ -1161,6 +1164,7 @@ void AI_toy_music_task(void *parg)
 			case SYS_EVENT_DEV_ONLINE:
 				AI_toy_printf("music SYS_EVENT_DEV_ONLINE\r");
 				music_stop_decoder(mapi);
+				bt_smart_led_flick(0, 0);
 				n_err = notice_player_play_by_path(MUSIC_TASK_NAME, 
 						(char *)AI_TOY_NOTICE_DEV_ONLINE, 
 						AI_toy_notice_play_callback,
@@ -1179,6 +1183,7 @@ void AI_toy_music_task(void *parg)
 
 			case SYS_EVENT_DEV_OFFLINE:
 				music_stop_decoder(mapi);
+				bt_smart_led_flick(500, 0);
 				file_operate_ctl(FOP_CLOSE_LOGDEV,mapi->fop_api,0,0);
 				n_err = notice_player_play_by_path(MUSIC_TASK_NAME, 
 						(char *)AI_TOY_NOTICE_DEV_OFFLINE, 

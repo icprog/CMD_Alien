@@ -42,6 +42,7 @@ static void idle_powerdown(void)
 	printf("idle powerdown !!!\n");
 	eye_led_api(EFFECTCLOSEALLLED, 0, 0);	
 	ear_light_set_status(0);
+	bt_smart_led_off();
 	pa_mute();
 
 	while(1)
@@ -91,6 +92,7 @@ static void power_on_deal(void)
 	if(poweron_flag == 0)
 	{
 		eye_led_api(EFFECT_POWER_ON, 0, 0);	
+		bt_smart_led_on();
 		n_err = notice_player_play_by_path(IDLE_TASK_NAME, 
 				(char *)AI_TOY_NOTICE_POWER_ON, 
 				power_on_notice_play_callback,

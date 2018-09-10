@@ -112,7 +112,8 @@ extern void ble_server_set_connection_interval(u16 in_min, u16 in_max, u16 timeo
 void bt_smart_ble_disconnect_deal(void)
 {
 	//清除一些状态
-	bt_smart_led_off();
+	//bt_smart_led_off();
+	bt_smart_led_flick(500, 0);
 	bt_smart_notice_plan = 0;
 	bt_smart_connect_dev_type = 0;
 }
@@ -126,7 +127,7 @@ void bt_smart_ble_disconnect_deal(void)
 /*----------------------------------------------------------------------------*/
 void bt_smart_ble_connect_deal(void)
 {
-		
+	bt_smart_led_flick(0, 0);	
 }
 
 /*----------------------------------------------------------------------------*/
@@ -140,10 +141,12 @@ tbool bt_smart_connect_status(void)
 {
 	if((get_curr_channel_state() != 0) && (get_smart_pass() == true))
 	{
+		bt_smart_led_flick(0, 0);
 		return true;	
 	}
 	else
 	{
+		bt_smart_led_flick(500, 0);
 		return false;	
 	}
 }
@@ -388,10 +391,11 @@ void bt_smart_msg_deal(void *priv, int *msg)
 				ignore_pause_eye_display = 1;
 				/* EyeEffectCtl(EFFECT_SPEECH_INPUT); */
 				eye_led_api(EFFECT_SPEECH_INPUT, 0 ,0);
+				bt_smart_led_flick(500, 0);
 				if(bt_smart_speech_start(BT_SMART_SPEECH_SOURCE, g_ai_mode) == true)
 				{
 #if (BT_SMART_SPEECH_SOURCE == SPEEX_INPUT)
-					bt_smart_led_on();			
+					bt_smart_led_flick(500, 0);		
 #elif (BT_SMART_SPEECH_SOURCE == SCO_INPUT)
 					///如果走sco则在通话激活之后才点亮灯
 #endif//(BT_SMART_SPEECH_SOURCE == SPEEX_INPUT)
@@ -467,10 +471,11 @@ void bt_smart_msg_deal(void *priv, int *msg)
 				}
 
 				bt_smart_printf("MSG_SPEEX_SEND_START\n");
+				bt_smart_led_flick(500, 0);
 				if(bt_smart_speech_start(BT_SMART_SPEECH_SOURCE, 0) == true)
 				{
 #if (BT_SMART_SPEECH_SOURCE == SPEEX_INPUT)
-					bt_smart_led_on();			
+					bt_smart_led_flick(500, 0);			
 #elif (BT_SMART_SPEECH_SOURCE == SCO_INPUT)
 					///如果走sco则在通话激活之后才点亮灯
 #endif//(BT_SMART_SPEECH_SOURCE == SPEEX_INPUT)
@@ -488,6 +493,7 @@ void bt_smart_msg_deal(void *priv, int *msg)
 			eye_led_set_back_api(EFFECT_PAUSE);
 			eye_led_api(EFFECT_SEARCH_ING, 10, 0);	
 			/* bt_smart_led_flick(150, BT_SMART_WAIT_ANSWER_TIMEOUT_N_SECOND); */
+			bt_smart_led_flick(0, 0);
 			pa_umute();
 			break;
 
@@ -495,6 +501,7 @@ void bt_smart_msg_deal(void *priv, int *msg)
 			///告知app连续对话结束， 可能是因为没有检测到语音输入超时产生
 			bt_smart_speech_continue_end();
 			eye_led_api(EFFECT_PAUSE, 0, 0);	
+			bt_smart_led_flick(0, 0);
 			/* bt_smart_led_off(); */
 			break;
 
@@ -504,6 +511,7 @@ void bt_smart_msg_deal(void *priv, int *msg)
 			bt_smart_speech_cancel();
 			/* bt_smart_led_off(); */
 			eye_led_api(EFFECT_PAUSE, 0, 0);	
+			bt_smart_led_flick(0, 0);
 			break;
 
 		case MSG_SMART_NOTICE_PLAN:
@@ -511,7 +519,7 @@ void bt_smart_msg_deal(void *priv, int *msg)
 			if(bt_smart_notice_plan)
 			{
 				bt_smart_speech_cancel();
-				bt_smart_led_off();
+				bt_smart_led_on();
 			}
 			break;
 
@@ -757,7 +765,7 @@ void bt_smart_enter_bt_task(void)
 void bt_smart_exit_bt_task(void)
 {
 	bt_smart_speech_stop();
-	bt_smart_led_off();
+	bt_smart_led_on();
 	ai_ctl.status = AI_STATUS_UNACTIVE;
 	ai_ctl.msg = NO_MSG;
 

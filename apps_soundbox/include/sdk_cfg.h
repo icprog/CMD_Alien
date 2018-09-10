@@ -29,7 +29,7 @@
 
 
 //开机未连接时播放三字经使能
-#define PLAY_SANZIJIN_EN		1
+#define PLAY_SANZIJIN_EN		0
 
 //配置对箱
 ///< 蓝牙对箱使能,对箱暂时不开放.ble,后台和app
@@ -204,7 +204,7 @@
 ///<人声消除
 #define VOCAL_REMOVER			0
 
-#define NOTICE_PLAY_VOL_VAL				(SYS_DEFAULT_VOL)
+#define NOTICE_PLAY_VOL_VAL		20//		(SYS_DEFAULT_VOL)
 
 /********************************************************************************/
 

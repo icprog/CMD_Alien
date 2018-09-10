@@ -22,10 +22,10 @@
   #define LEDR_PORT     0
 #endif
 
-#define LED_INIT_EN()     {JL_PORTB->PU &= ~LED_B_BIT;JL_PORTB->PD &= ~LED_B_BIT;JL_PORTB->DIR &= ~LED_B_BIT;}
-#define LED_INIT_DIS()    {JL_PORTB->PU &= ~LED_B_BIT;JL_PORTB->PD &= ~LED_B_BIT;JL_PORTB->DIR |= LED_B_BIT;}
-#define B_LED_ON()        JL_PORTB->OUT |= LED_B_BIT;
-#define B_LED_OFF()       JL_PORTB->OUT &= ~LED_B_BIT;
+#define LED_INIT_EN()     {PORTR_DIE(PORTR1,1);PORTR_DIR(PORTR1,0);PORTR_OUT(PORTR1,1);}
+#define LED_INIT_DIS()    {PORTR_DIE(PORTR1,1);PORTR_DIR(PORTR1,0);PORTR_OUT(PORTR1,0);}
+#define B_LED_ON()        PORTR_OUT(PORTR1,1);
+#define B_LED_OFF()       PORTR_OUT(PORTR1,0);
 #define R_LED_ON(...)
 #define R_LED_OFF(...)
 

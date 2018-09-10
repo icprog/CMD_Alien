@@ -678,7 +678,7 @@ static void btstack_status_change_deal(void *ptr, u8 status)
                 }
                 else/*初始化完成进入回连模式*/
                 {
-					/* bt_smart_led_flick(100, 0); */
+					bt_smart_led_flick(500, 0);
 					/* EyeEffectCtl(EFFECT_CONNECT); */
 					printf("BT_STATUS_INIT_OK\n");
 					/* while(play_sel_busy()) {
@@ -723,6 +723,7 @@ static void btstack_status_change_deal(void *ptr, u8 status)
 					if(get_smart_pass())
 					{
 						printf("BT_STATUS_FIRST_DISCONNECT ~~~~~\n");
+						bt_smart_led_flick(500, 0);
 						os_taskq_post(keymsg_task_name, 1, MSG_SMART_DISCONNECT);
 						/* bt_smart_led_flick(100, 0); */
 						/* EyeEffectCtl(EFFECT_NO_CONNECT); */
@@ -963,6 +964,7 @@ static void btstack_key_handler(void *ptr,int *msg)
 						user_send_cmd_prepare(USER_CTRL_AVCTP_OPID_PLAY,0,NULL);
 						bt_prompt_play_by_name(AI_TOY_NOTICE_PLAY,NULL);
 						eye_led_api(EFFECT_PLAY, 0, 0);
+						bt_smart_led_flick(500, 0);
 					}
 				}
 #endif
@@ -1751,7 +1753,7 @@ void bt_discon_complete_handle(u8 *addr , int reason)
 					os_time_dly(3);
 				}
 				bt_prompt_play_by_name(AI_TOY_NOTICE_P_CONNECT,NULL);
-				bt_smart_led_flick(100, 0);
+				bt_smart_led_flick(500, 0);
 
 				if(compare_task_name(BTSTACK_TASK_NAME))
 				{
