@@ -25,7 +25,7 @@ void pa_mute(void)
 	/* sys_det_puts("pa_mute\n"); */
 	PORTR_DIE(PORTR2,1);
 	PORTR_DIR(PORTR2,0);   
-	PORTR_OUT(PORTR2,0);   
+	PORTR_OUT(PORTR2,1);   
 	/* printf("pa to-------->mute"); */
 	/* JL_PORTA->DIR &= ~BIT(4); */ 
 	/* JL_PORTA->OUT |= BIT(4); */  
@@ -35,7 +35,7 @@ void pa_umute(void)
 {
 	PORTR_DIE(PORTR2,1);
 	PORTR_DIR(PORTR2,0);
-	PORTR_OUT(PORTR2,1);
+	PORTR_OUT(PORTR2,0);
 	/* printf("pa to-------->unmute"); */
 }
 
